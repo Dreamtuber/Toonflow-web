@@ -61,10 +61,10 @@
       "requestConfig": "Địa chỉ yêu cầu (API)",
       "about": "Kiểm tra cập nhật",
       "logoutConfig": "Đăng xuất",
-      "skillsSkillsManagement": "Kỹ năngQuản lý kỹ năng",
+      "skillsSkillsManagement": "Quản lý kỹ năng",
       "devConfig": "Tùy chọn nhà phát triển",
       "modelMap": "Ánh xạ mô hình",
-      "ui": "Giao diện"
+      "ui": "Cài đặt giao diện"
     },
     "language": {
       "desc": "Chọn ngôn ngữ hiển thị giao diện",

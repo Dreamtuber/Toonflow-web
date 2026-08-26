@@ -61,10 +61,10 @@
       "requestConfig": "Request URL",
       "about": "Check for Updates",
       "logoutConfig": "Logout",
-      "skillsSkillsManagement": "SkillsSkills Management",
+      "skillsSkillsManagement": "Skills Management",
       "devConfig": "Developer Options",
       "modelMap": "Model Mapping",
-      "ui": "Interface"
+      "ui": "Interface Settings"
     },
     "language": {
       "desc": "Select the interface display language",
