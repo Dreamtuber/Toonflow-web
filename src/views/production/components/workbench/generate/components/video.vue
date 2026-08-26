@@ -142,7 +142,7 @@ const downloadingSet = new Set<string>();
 async function downloadVideo(value: HistoryVideoItem) {
   if (!value?.src) return;
   if (downloadingSet.has(value.src)) {
-    window.$message.info("下载进行中，请稍候");
+    window.$message.info($t("workbench.generate.msg.downloading"));
     return;
   }
   downloadingSet.add(value.src);
@@ -154,7 +154,7 @@ async function downloadVideo(value: HistoryVideoItem) {
     const link = document.createElement("a");
     link.href = objectUrl;
     // 使用时间戳保证文件名唯一，避免浏览器提示覆盖
-    link.download = `视频_${Date.now()}.mp4`;
+    link.download = $t("workbench.generate.file.singleVideo", { time: Date.now() });
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -166,7 +166,7 @@ async function downloadVideo(value: HistoryVideoItem) {
     }, 60000);
   } catch (err) {
     console.error(err);
-    window.$message.error("下载失败");
+    window.$message.error($t("workbench.generate.msg.downloadFailed"));
   } finally {
     downloadingSet.delete(value.src);
   }

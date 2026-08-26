@@ -1292,7 +1292,8 @@
           "videoDescPlaceholder": "Vui lòng nhập mô tả video",
           "clearSelection": "Bỏ chọn",
           "selectAll": "Chọn tất cả",
-          "selectedCount": "Đã chọn {count}"
+          "selectedCount": "Đã chọn {count}",
+          "selectFirst": "Vui lòng chọn bảng phân cảnh trước"
         },
         "storyboardTable": {
           "title": "Bảng danh sách phân cảnh",
@@ -1533,7 +1534,13 @@
         "playbackRateRange": "Tốc độ phát phải nằm trong khoảng từ 0.1 đến 10",
         "updatePlaybackRateFailed": "Cập nhật tốc độ phát thất bại:",
         "importProject": "Nhập dự án",
-        "import": "Nhập"
+        "import": "Nhập",
+        "track": {
+          "main": "Rãnh chính",
+          "audio": "Âm thanh",
+          "subtitle": "Phụ đề",
+          "filter": "Bộ lọc"
+        }
       },
       "clipType": {
         "video": "Video",
@@ -1708,7 +1715,38 @@
       "generateSuccess": "Tạo video thành công",
       "modeChange": "Xóa nội dung",
       "modeChangeConfirm": "Chuyển chế độ sẽ xóa các hình ảnh và lời nhắc đang chọn",
-      "prompt": "Lời nhắc video"
+      "prompt": "Lời nhắc video",
+      "mode": {
+        "singleImage": "Ảnh đơn",
+        "startEndRequired": "Khung hình đầu và cuối",
+        "endFrameOptional": "Khung hình cuối tùy chọn",
+        "startFrameOptional": "Khung hình đầu tùy chọn",
+        "text": "Văn bản -> Video",
+        "video": "Video",
+        "image": "Hình ảnh",
+        "audio": "Âm thanh",
+        "textRef": "Văn bản",
+        "referenceCombo": "{parts} tham khảo"
+      },
+      "msg": {
+        "promptGenFailed": "Tạo lời nhắc thất bại",
+        "promptGenFailedReason": "Tạo lời nhắc thất bại: {reason}",
+        "unknownReason": "không rõ nguyên nhân",
+        "submitFailed": "Gửi yêu cầu tạo video thất bại",
+        "promptGenStarted": "Bắt đầu tạo lời nhắc",
+        "promptGenRequestFailed": "Tạo lời nhắc thất bại",
+        "downloading": "Đang tải xuống, vui lòng đợi",
+        "downloadFailed": "Tải xuống thất bại"
+      },
+      "file": {
+        "trackVideo": "phancanh{id}",
+        "batchVideoZip": "videos_{time}.zip",
+        "singleVideo": "video_{time}.mp4",
+        "storyboardImage": "phancanh{id}",
+        "storyboardZip": "phancanh.zip"
+      },
+      "audioContent": "Nội dung âm thanh: {content}",
+      "storyboardIndex": "Phân cảnh {index}"
     }
   },
   "login": {

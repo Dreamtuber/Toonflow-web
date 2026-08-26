@@ -1292,7 +1292,8 @@
           "editNode": "Edit",
           "removeFailed": "Failed to delete storyboard",
           "videoDesc": "Video Description",
-          "videoDescPlaceholder": "Please enter a video description"
+          "videoDescPlaceholder": "Please enter a video description",
+          "selectFirst": "Please select a storyboard panel first"
         },
         "storyboardTable": {
           "title": "Storyboard Table",
@@ -1533,7 +1534,13 @@
         "playbackRateRange": "Playback rate must be between 0.1 and 10",
         "updatePlaybackRateFailed": "Failed to update playback rate:",
         "importProject": "Import Project",
-        "import": "Import"
+        "import": "Import",
+        "track": {
+          "main": "Main Track",
+          "audio": "Audio",
+          "subtitle": "Subtitles",
+          "filter": "Filters"
+        }
       },
       "clipType": {
         "video": "Video",
@@ -1708,7 +1715,38 @@
       "modeChange": "Clear Content",
       "modeChangeConfirm": "Switching mode will clear the currently selected images and prompt",
       "prompt": "Video Prompt",
-      "promptEmpty": "Some of the selected items have an empty prompt. Continue generating?"
+      "promptEmpty": "Some of the selected items have an empty prompt. Continue generating?",
+      "mode": {
+        "singleImage": "Single Image",
+        "startEndRequired": "Start & End Frames",
+        "endFrameOptional": "End Frame Optional",
+        "startFrameOptional": "Start Frame Optional",
+        "text": "Text to Video",
+        "video": "Video",
+        "image": "Image",
+        "audio": "Audio",
+        "textRef": "Text",
+        "referenceCombo": "{parts} Reference"
+      },
+      "msg": {
+        "promptGenFailed": "Prompt generation failed",
+        "promptGenFailedReason": "Prompt generation failed: {reason}",
+        "unknownReason": "unknown reason",
+        "submitFailed": "Failed to submit the video generation request",
+        "promptGenStarted": "Prompt generation started",
+        "promptGenRequestFailed": "Failed to generate prompts",
+        "downloading": "Download in progress, please wait",
+        "downloadFailed": "Download failed"
+      },
+      "file": {
+        "trackVideo": "storyboard{id}",
+        "batchVideoZip": "videos_{time}.zip",
+        "singleVideo": "video_{time}.mp4",
+        "storyboardImage": "storyboard{id}",
+        "storyboardZip": "storyboards.zip"
+      },
+      "audioContent": "Audio content: {content}",
+      "storyboardIndex": "Storyboard {index}"
     }
   },
   "login": {

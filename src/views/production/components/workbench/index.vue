@@ -197,10 +197,10 @@ function createDemoTracks(): Track[] {
     ...(isMain && { isMain }),
   });
   return [
-    createTrack("video", "主轨道", 0, true),
-    createTrack("audio", "音频", 2),
-    createTrack("subtitle", "字幕", 3),
-    createTrack("filter", "滤镜", 4),
+    createTrack("video", $t("workbench.production.editVideo.track.main"), 0, true),
+    createTrack("audio", $t("workbench.production.editVideo.track.audio"), 2),
+    createTrack("subtitle", $t("workbench.production.editVideo.track.subtitle"), 3),
+    createTrack("filter", $t("workbench.production.editVideo.track.filter"), 4),
   ];
 }
 

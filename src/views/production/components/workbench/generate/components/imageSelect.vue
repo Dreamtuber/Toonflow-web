@@ -22,7 +22,7 @@
           </div>
         </template>
         <template v-else>
-          <t-tooltip theme="primary" :content="item?.prompt ? '音频内容：' + item.prompt : ''">
+          <t-tooltip theme="primary" :content="item?.prompt ? $t('workbench.generate.audioContent', { content: item.prompt }) : ''">
             <span style="font-size: 20px">文</span>
           </t-tooltip>
         </template>
@@ -101,7 +101,7 @@
           <img v-if="sb.src" :src="sb.src" />
           <div v-else class="textBox ac jc">
             <t-tooltip theme="primary" :content="sb?.videoDesc || ''">
-              <span style="font-size: 20px">{{ `分镜 ${sb?.index + 1 || ""}` }}</span>
+              <span style="font-size: 20px">{{ $t("workbench.generate.storyboardIndex", { index: sb?.index != null ? sb.index + 1 : "" }) }}</span>
             </t-tooltip>
           </div>
         </div>
@@ -136,8 +136,8 @@ const buildLabel = computed(() => {
   const startOptional = props.mode === "startFrameOptional";
   const endOptional = props.mode === "endFrameOptional";
   return [
-    { label: startOptional ? "首帧(可选)" : "首帧", value: "start" },
-    { label: endOptional ? "尾帧(可选)" : "尾帧", value: "end" },
+    { label: startOptional ? $t("workbench.production.generate.startFrameOptional") : $t("workbench.production.generate.startFrame"), value: "start" },
+    { label: endOptional ? $t("workbench.production.generate.endFrameOptional") : $t("workbench.production.generate.endFrame"), value: "end" },
   ];
 });
 
