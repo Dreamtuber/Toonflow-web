@@ -1120,8 +1120,8 @@ function linkRead() {
               if (data.includes("<html>")) {
                 alertBox = DialogPlugin.alert({
                   theme: "danger",
-                  header: "链接返回了一个网页，添加供应商需要返回TS代码，请确认链接是否正确",
-                  body: "请勿输入中转站地址，如需使用中转站请修改OpenAI标准接口的baseUrl使用中转站地址",
+                  header: $t("settings.vendor.msg.linkReturnedHtml"),
+                  body: $t("settings.vendor.msg.linkReturnedHtmlBody"),
                   onConfirm: ({ e }) => {
                     alertBox.hide();
                   },
@@ -1129,7 +1129,7 @@ function linkRead() {
               } else {
                 DialogPlugin.alert({
                   theme: "danger",
-                  header: "链接返回的内容不正确，添加供应商需要返回TS代码，请确认链接是否正确",
+                  header: $t("settings.vendor.msg.linkContentInvalid"),
                   onConfirm: ({ e }) => {
                     alertBox.hide();
                   },

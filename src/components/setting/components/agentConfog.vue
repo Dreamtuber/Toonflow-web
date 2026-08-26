@@ -22,7 +22,7 @@
         <t-radio value="0">{{ $t("settings.agent.ordinary") }}</t-radio>
         <t-radio value="1">{{ $t("settings.agent.advanced") }}</t-radio>
       </t-radio-group>
-      <t-button v-if="agentUseModeVal == '1'" theme="primary" @click="batchSetting">批量设置</t-button>
+      <t-button v-if="agentUseModeVal == '1'" theme="primary" @click="batchSetting">{{ $t("settings.agent.batchSetting") }}</t-button>
     </div>
 
     <div v-if="agentUseModeVal === '0'" class="cardGrid">
@@ -114,7 +114,7 @@
     <!-- 批量高级配置弹窗 -->
     <t-dialog
       v-model:visible="batchDialogVisible"
-      header="批量设置（高级）"
+      :header="$t('settings.agent.batchSettingTitle')"
       width="640px"
       :on-confirm="applyBatchSettings"
       :confirm-btn="$t('settings.agent.confirm')"
@@ -122,9 +122,9 @@
       :loading="batchLoading">
       <div class="dialogContent">
         <t-form label-align="top">
-          <t-form-item label="选择agent">
-            <t-select multiple v-model="batchSelectedRaw" @change="onBatchAgentsChange" placeholder="请选择">
-              <t-option :value="'全部'">全部</t-option>
+          <t-form-item :label="$t('settings.agent.selectAgent')">
+            <t-select multiple v-model="batchSelectedRaw" @change="onBatchAgentsChange" :placeholder="$t('settings.agent.selectPlaceholder')">
+              <t-option :value="ALL_AGENTS">{{ $t("settings.agent.all") }}</t-option>
               <t-option v-for="item in advancedModelData" :key="item.id" :value="item.id" :label="item.name">{{ item.name }}</t-option>
             </t-select>
           </t-form-item>
@@ -301,6 +301,9 @@ const agentUseModeVal = ref("0");
 // 批量设置状态
 const batchDialogVisible = ref(false);
 const batchSelectedIds = ref<number[]>([]);
+// Sentinel for the "all agents" option; transient select state, never persisted
+// or sent to the backend, so it carries no user-visible text.
+const ALL_AGENTS = "__ALL__";
 const batchApplyToAll = ref(false);
 const batchSelectedRaw = ref<(number | string)[]>([]);
 const batchModelValues = reactive<any>({});
@@ -331,21 +334,21 @@ function onBatchAgentsChange(value: any) {
     batchApplyToAll.value = false;
     return;
   }
-  if (val.includes("全部")) {
+  if (val.includes(ALL_AGENTS)) {
     batchApplyToAll.value = true;
     batchSelectedIds.value = advancedModelData.value.map((m) => m.id);
     // show only ALL in UI
-    batchSelectedRaw.value = ["全部"];
+    batchSelectedRaw.value = [ALL_AGENTS];
   } else {
     batchApplyToAll.value = false;
-    batchSelectedIds.value = val.filter((v) => v !== "全部").map((v) => Number(v));
+    batchSelectedIds.value = val.filter((v) => v !== ALL_AGENTS).map((v) => Number(v));
   }
 }
 
 async function applyBatchSettings() {
   const targetIds = batchApplyToAll.value ? advancedModelData.value.map((m) => m.id) : batchSelectedIds.value;
   if (!targetIds || targetIds.length === 0) {
-    return window.$message.warning("请选择要设置的模型");
+    return window.$message.warning($t("settings.agent.msg.selectModelFirst"));
   }
   batchLoading.value = true;
   const items = targetIds

@@ -40,6 +40,9 @@
         "fetchModelFailed": "Failed to fetch model data:"
       },
       "goSetting": "Go to settings and add a model"
+    },
+    "promptEditor": {
+      "textReference": "Text Reference"
     }
   },
   "settings": {
@@ -174,7 +177,10 @@
         "disabled": "Disabled",
         "linkAddVendorRiskBody": "Adding a new AI vendor will give it access to the system API, please make sure you trust the vendor's link source!",
         "importAdd": "Adding a new AI vendor will give it access to the system API, please make sure you trust the vendor's documentation source!",
-        "linkAddFailed": "Failed to add link"
+        "linkAddFailed": "Failed to add link",
+        "linkReturnedHtml": "The link returned a web page. Adding a provider requires the link to return TypeScript code — please check the link",
+        "linkReturnedHtmlBody": "Do not enter a relay endpoint here. To use a relay, set its address as the baseUrl of the standard OpenAI interface instead",
+        "linkContentInvalid": "The link returned unexpected content. Adding a provider requires the link to return TypeScript code — please check the link"
       },
       "think": "deep thinking",
       "code": "code",
@@ -247,9 +253,15 @@
         "enterKey": "Please enter KEY",
         "saveFailed": "Save failed: ",
         "getAgentListFailed": "Failed to fetch Agent config list: ",
-        "toonflowNotFound": "Toonflow official transfer station does not exist"
+        "toonflowNotFound": "Toonflow official transfer station does not exist",
+        "selectModelFirst": "Please select the models to configure"
       },
-      "temperature": "temperature"
+      "temperature": "temperature",
+      "batchSetting": "Batch Settings",
+      "batchSettingTitle": "Batch Settings (Advanced)",
+      "selectAgent": "Select Agent",
+      "selectPlaceholder": "Please select",
+      "all": "All"
     },
     "memory": {
       "warning": "The following settings are preset to recommended values. Unless you fully understand their implications, we recommend keeping the current settings.",
@@ -503,7 +515,14 @@
       "noUpdate": "You are already on the latest version",
       "upToDate": "New version detected",
       "confirmReinstall": "Copy link",
-      "reinstallRequired": "The browser will automatically open and download. If it does not open, please open it manually."
+      "reinstallRequired": "The browser will automatically open and download. If it does not open, please open it manually.",
+      "updateTime": "Updated",
+      "customUrlPlaceholder": "Enter a custom update URL",
+      "msg": {
+        "customUrlEnabled": "Custom update URL enabled"
+      },
+      "confirmUpdateBody": "Update to v{version} via {source}. Continue?{warning}",
+      "reinstallWarning": "\n\nThis version needs a full reinstall. The update may replace your existing installation, so save your work first."
     },
     "logout": {
       "warning": "After logging out, you will need to log in again to access the system.",
@@ -622,6 +641,21 @@
       "promptPlaceholder": "Enter the prompt for this mode",
       "save": "Save Configuration",
       "videoModel": "Video Model"
+    },
+    "ui": {
+      "colorMode": "Color Mode",
+      "modeAuto": "Auto",
+      "modeLight": "Light",
+      "modeDark": "Dark",
+      "themeColor": "Theme Color",
+      "fontSize": "Font Size",
+      "fontTiny": "Tiny",
+      "fontSmaller": "Smaller",
+      "fontSmall": "Small",
+      "fontDefault": "Default",
+      "fontLarge": "Large",
+      "fontLarger": "Larger",
+      "fontHuge": "Huge"
     }
   },
   "workbench": {
@@ -1825,6 +1859,7 @@
     "selectAssets": "Select assets",
     "sessionExpired": "Your session has expired. Please sign in again",
     "submit": "Submit",
-    "submitting": "Submitting"
+    "submitting": "Submitting",
+    "loading": "Loading..."
   }
 }

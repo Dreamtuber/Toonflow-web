@@ -40,6 +40,9 @@
         "fetchModelFailed": "Lấy dữ liệu mô hình thất bại:"
       },
       "goSetting": "Vào cài đặt để thêm mô hình"
+    },
+    "promptEditor": {
+      "textReference": "Tham khảo văn bản"
     }
   },
   "settings": {
@@ -174,7 +177,10 @@
         "linkAddVendorRiskBody": "Việc thêm nhà cung cấp AI mới sẽ cấp cho nhà cung cấp đó quyền truy cập vào API hệ thống, vui lòng đảm bảo rằng bạn tin cậy nguồn liên kết của nhà cung cấp đó!",
         "importAdd": "Việc thêm nhà cung cấp AI mới sẽ cấp cho nhà cung cấp đó quyền truy cập vào API hệ thống, vui lòng đảm bảo rằng bạn tin cậy vào nguồn tài liệu của nhà cung cấp đó!",
         "linkAddFailed": "Không thể thêm liên kết",
-        "vendorNeedsUpdate": "Phiên bản nhà cung cấp này đã cũ hoặc bị thiếu. Vui lòng cập nhật lên phiên bản 2.0 trở lên để có trải nghiệm tốt nhất."
+        "vendorNeedsUpdate": "Phiên bản nhà cung cấp này đã cũ hoặc bị thiếu. Vui lòng cập nhật lên phiên bản 2.0 trở lên để có trải nghiệm tốt nhất.",
+        "linkReturnedHtml": "Liên kết trả về một trang web. Việc thêm nhà cung cấp yêu cầu liên kết trả về mã TypeScript — vui lòng kiểm tra lại liên kết",
+        "linkReturnedHtmlBody": "Không nhập địa chỉ máy chủ trung chuyển ở đây. Nếu cần dùng máy chủ trung chuyển, hãy đặt địa chỉ đó làm baseUrl của giao diện OpenAI tiêu chuẩn",
+        "linkContentInvalid": "Liên kết trả về nội dung không hợp lệ. Việc thêm nhà cung cấp yêu cầu liên kết trả về mã TypeScript — vui lòng kiểm tra lại liên kết"
       },
       "think": "suy nghĩ sâu sắc",
       "code": "mã số",
@@ -247,9 +253,15 @@
         "enterKey": "Vui lòng nhập KEY",
         "saveFailed": "Lưu thất bại:",
         "getAgentListFailed": "Lấy danh sách cấu hình Agent thất bại:",
-        "toonflowNotFound": "Trạm trung chuyển chính thức của Toonflow không tồn tại"
+        "toonflowNotFound": "Trạm trung chuyển chính thức của Toonflow không tồn tại",
+        "selectModelFirst": "Vui lòng chọn mô hình cần cấu hình"
       },
-      "temperature": "nhiệt độ"
+      "temperature": "nhiệt độ",
+      "batchSetting": "Cài đặt hàng loạt",
+      "batchSettingTitle": "Cài đặt hàng loạt (Nâng cao)",
+      "selectAgent": "Chọn Agent",
+      "selectPlaceholder": "Vui lòng chọn",
+      "all": "Tất cả"
     },
     "memory": {
       "warning": "Các mục cấu hình dưới đây đã được đặt sẵn ở mức khuyến nghị. Trừ khi bạn hiểu rõ ý nghĩa và tác động của từng cấu hình, nếu không khuyên bạn nên giữ nguyên thiết lập hiện tại",
@@ -436,7 +448,14 @@
       "selectUpdateSource": "Chọn nguồn cập nhật",
       "updateFailed": "Cập nhật thất bại, vui lòng thử lại",
       "updateSuccess": "Cập nhật thành công, vui lòng khởi động lại ứng dụng",
-      "updating": "Đang cập nhật..."
+      "updating": "Đang cập nhật...",
+      "updateTime": "Thời gian cập nhật",
+      "customUrlPlaceholder": "Nhập địa chỉ cập nhật tùy chỉnh",
+      "msg": {
+        "customUrlEnabled": "Đã bật địa chỉ cập nhật tùy chỉnh"
+      },
+      "confirmUpdateBody": "Cập nhật lên v{version} qua {source}. Tiếp tục?{warning}",
+      "reinstallWarning": "\n\nPhiên bản này cần cài đặt lại hoàn toàn. Bản cập nhật có thể thay thế bản cài đặt hiện có, hãy lưu công việc trước."
     },
     "logout": {
       "warning": "Sau khi đăng xuất, bạn cần đăng nhập lại để tiếp tục sử dụng hệ thống.",
@@ -622,6 +641,21 @@
       "totalCount": "Tổng cộng {count} Skill",
       "typeMain": "Cốt lõi",
       "typeReferences": "Kỹ thuật"
+    },
+    "ui": {
+      "colorMode": "Chế độ màu",
+      "modeAuto": "Tự động",
+      "modeLight": "Sáng",
+      "modeDark": "Tối",
+      "themeColor": "Màu chủ đạo",
+      "fontSize": "Cỡ chữ",
+      "fontTiny": "Rất nhỏ",
+      "fontSmaller": "Nhỏ hơn",
+      "fontSmall": "Nhỏ",
+      "fontDefault": "Mặc định",
+      "fontLarge": "Lớn",
+      "fontLarger": "Lớn hơn",
+      "fontHuge": "Rất lớn"
     }
   },
   "workbench": {
@@ -1688,7 +1722,8 @@
     "submitting": "Đang gửi",
     "editSuccess": "Cập nhật thành công",
     "editFailed": "Cập nhật thất bại",
-    "submit": "Gửi"
+    "submit": "Gửi",
+    "loading": "Đang tải..."
   },
   "components.storyboardImageCheck.camera": "Máy quay",
   "components.storyboardImageCheck.dialogTitle": "Chọn hình storyboard",

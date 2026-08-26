@@ -50,6 +50,9 @@
       "duration": "时长",
       "lines": "台词",
       "createTime": "创建时间"
+    },
+    "promptEditor": {
+      "textReference": "文本参考"
     }
   },
   "settings": {
@@ -253,7 +256,10 @@
         "disabled": "已禁用",
         "linkAddVendorRiskBody": "添加新的 AI 供应商将赋予其访问系统 API 的权限，请确认您信任该供应商的链接来源！",
         "importAdd": "添加新的 AI 供应商将赋予其访问系统 API 的权限，请确认您信任该供应商的文件来源！",
-        "linkAddFailed": "链接添加失败"
+        "linkAddFailed": "链接添加失败",
+        "linkReturnedHtml": "链接返回了一个网页，添加供应商需要返回TS代码，请确认链接是否正确",
+        "linkReturnedHtmlBody": "请勿输入中转站地址，如需使用中转站请修改OpenAI标准接口的baseUrl使用中转站地址",
+        "linkContentInvalid": "链接返回的内容不正确，添加供应商需要返回TS代码，请确认链接是否正确"
       },
       "think": "深度思考",
       "code": "代码",
@@ -284,9 +290,15 @@
         "enterKey": "请输入 KEY",
         "saveFailed": "保存失败：",
         "getAgentListFailed": "获取Agent配置列表失败：",
-        "toonflowNotFound": "Toonflow官方中转站不存在"
+        "toonflowNotFound": "Toonflow官方中转站不存在",
+        "selectModelFirst": "请选择要设置的模型"
       },
-      "temperature": "温度"
+      "temperature": "温度",
+      "batchSetting": "批量设置",
+      "batchSettingTitle": "批量设置（高级）",
+      "selectAgent": "选择agent",
+      "selectPlaceholder": "请选择",
+      "all": "全部"
     },
     "memory": {
       "warning": "以下配置项已预设为推荐值。除非您清楚了解各项配置的含义及影响，否则建议维持现有设置",
@@ -540,7 +552,14 @@
       "noUpdate": "当前已是最新版本",
       "upToDate": "检测到新版本",
       "reinstallRequired": "将自动打开浏览器并下载，如未打开请手动打开",
-      "confirmReinstall": "复制链接"
+      "confirmReinstall": "复制链接",
+      "updateTime": "更新时间",
+      "customUrlPlaceholder": "输入自定义更新地址",
+      "msg": {
+        "customUrlEnabled": "已开启自定义更新地址"
+      },
+      "confirmUpdateBody": "将通过 {source} 更新到 v{version}，确认继续吗？{warning}",
+      "reinstallWarning": "\n\n检测到该版本需要重新安装更新，安装过程中可能会替换现有安装，请先保存当前工作。"
     },
     "logout": {
       "warning": "退出登录后，您需要重新登录才能继续使用系统。",
@@ -631,6 +650,21 @@
     },
     "generate": {
       "modelChnageSure": "确认清空"
+    },
+    "ui": {
+      "colorMode": "颜色模式",
+      "modeAuto": "自动",
+      "modeLight": "浅色",
+      "modeDark": "深色",
+      "themeColor": "主题色",
+      "fontSize": "字体大小",
+      "fontTiny": "极小",
+      "fontSmaller": "较小",
+      "fontSmall": "小",
+      "fontDefault": "默认",
+      "fontLarge": "大",
+      "fontLarger": "较大",
+      "fontHuge": "极大"
     }
   },
   "workbench": {
@@ -1667,7 +1701,8 @@
     "submitting": "提交中",
     "editSuccess": "修改成功",
     "editFailed": "修改失败",
-    "submit": "提交"
+    "submit": "提交",
+    "loading": "加载中..."
   },
   "workbench.project.msg.enterProjectQuality": "请选择图片质量",
   "promptManage": {

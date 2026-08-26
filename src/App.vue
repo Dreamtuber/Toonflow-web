@@ -1,6 +1,6 @@
 <template>
   <div v-if="loading" class="app-loading">
-    <t-loading :loading="true" size="large" text="加载中..." />
+    <t-loading :loading="true" size="large" :text="$t('common.loading')" />
   </div>
   <template v-else>
     <titleBar v-if="isElectron" />

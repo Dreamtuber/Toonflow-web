@@ -127,7 +127,7 @@ function createRefTag(index: number): HTMLSpanElement {
       });
     }
     if (refType === "text") {
-      return h("span", { style: { padding: "8px", display: "block", fontSize: "14px" } }, "文本参考");
+      return h("span", { style: { padding: "8px", display: "block", fontSize: "14px" } }, $t("components.promptEditor.textReference"));
     }
     return h("span", { style: { padding: "8px", display: "block" } }, refSrc);
   };
