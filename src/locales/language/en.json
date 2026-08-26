@@ -1309,7 +1309,9 @@
           "removeFailed": "Failed to delete storyboard",
           "videoDesc": "Video Description",
           "videoDescPlaceholder": "Please enter a video description",
-          "selectFirst": "Please select a storyboard panel first"
+          "selectFirst": "Please select a storyboard panel first",
+          "generateFailed": "Generation Failed",
+          "batchDelete": "Batch Delete"
         },
         "storyboardTable": {
           "title": "Storyboard Table",
@@ -1363,7 +1365,11 @@
         "uploadImage": "Asset image upload",
         "mode": "model",
         "closeConfirmTitle": "Close the editing panel?",
-        "closeConfirmBody": "Unsaved data will be lost after closing"
+        "closeConfirmBody": "Unsaved data will be lost after closing",
+        "assetImage": "Asset Image",
+        "storyboardImage": "Storyboard Image",
+        "textRef": "Text {index}",
+        "textBadge": "T"
       },
       "save": "Select",
       "cancel": "Cancel",
@@ -1556,7 +1562,8 @@
           "audio": "Audio",
           "subtitle": "Subtitles",
           "filter": "Filters"
-        }
+        },
+        "clipNamingHint": "Name clip files after the # number of their storyboard group"
       },
       "clipType": {
         "video": "Video",
@@ -1762,7 +1769,10 @@
         "storyboardZip": "storyboards.zip"
       },
       "audioContent": "Audio content: {content}",
-      "storyboardIndex": "Storyboard {index}"
+      "storyboardIndex": "Storyboard {index}",
+      "selectedTag": "Selected",
+      "selectedTrackCount": "{count} selected",
+      "mediaAudio": "Audio"
     }
   },
   "login": {

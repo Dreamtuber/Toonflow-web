@@ -25,7 +25,7 @@
             <t-image v-if="item.type === 'image'" :src="item.src" fit="cover" class="ref-popup-img" />
             <i-video v-else-if="item.type === 'video'" class="ref-popup-icon" />
             <i-volume-mute v-else-if="item.type === 'audio'" class="ref-popup-icon" />
-            <span v-else class="ref-popup-text">文</span>
+            <span v-else class="ref-popup-text">{{ $t("workbench.production.editImage.textBadge") }}</span>
             <!-- 按类型分别计数 -->
             <span class="reference-label">{{ getRefLabel(index) }}</span>
             <span class="ref-index-badge">#{{ getTypeIndex(index) }}</span>

@@ -14,7 +14,7 @@
           <t-tooltip theme="primary" v-else-if="item.fileType == 'audio'" :content="item?.prompt || ''">
             <div class="mediaPreview audioPreview">
               <i-acoustic size="20" />
-              <span class="mediaLabel">音频</span>
+              <span class="mediaLabel">{{ $t("workbench.generate.mediaAudio") }}</span>
             </div>
           </t-tooltip>
           <div v-else-if="item.fileType == 'video'" class="mediaPreview videoPreview">
@@ -23,7 +23,7 @@
         </template>
         <template v-else>
           <t-tooltip theme="primary" :content="item?.prompt ? $t('workbench.generate.audioContent', { content: item.prompt }) : ''">
-            <span style="font-size: 20px">文</span>
+            <span style="font-size: 20px">{{ $t("workbench.production.editImage.textBadge") }}</span>
           </t-tooltip>
         </template>
         <div class="imageTitleWrap" v-if="item.sources == 'storyboard' && item.index != null">
@@ -52,7 +52,7 @@
             </t-image>
             <div v-else-if="imageList?.[index]?.fileType == 'audio'" class="mediaPreview audioPreview">
               <i-acoustic size="20" />
-              <span class="mediaLabel">音频</span>
+              <span class="mediaLabel">{{ $t("workbench.generate.mediaAudio") }}</span>
             </div>
             <div v-else-if="imageList?.[index]?.fileType == 'video'" class="mediaPreview videoPreview">
               <video class="uploadPreview" :src="imageList?.[index]!.src" preload="metadata" muted />
@@ -60,7 +60,7 @@
           </template>
           <template v-else>
             <t-tooltip theme="primary" :content="imageList?.[index]?.prompt || ''">
-              <span style="font-size: 20px">文</span>
+              <span style="font-size: 20px">{{ $t("workbench.production.editImage.textBadge") }}</span>
             </t-tooltip>
           </template>
           <div class="imageTitleWrap" v-if="imageList?.[index]?.sources == 'storyboard' && imageList?.[index]?.index != null">

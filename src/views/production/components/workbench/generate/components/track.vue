@@ -4,7 +4,7 @@
       <div class="trackMenu f ac jb">
         <div class="left f ac">
           <t-checkbox v-model="checkAll" @change="handleCheckAll">{{ $t("workbench.generate.selectAll") }}</t-checkbox>
-          <span class="selectedCount" v-if="checkedTrackIds.length">{{ $t("workbench.generate.selected") }} {{ checkedTrackIds.length }} 段</span>
+          <span class="selectedCount" v-if="checkedTrackIds.length">{{ $t("workbench.generate.selectedTrackCount", { count: checkedTrackIds.length }) }}</span>
         </div>
         <div class="right f ac">
           <t-button size="small" variant="outline" @click="batchDownloadVideo">{{ $t("workbench.generate.batchDownloadVideo") }}</t-button>
@@ -30,7 +30,7 @@
             @click.stop
             @change="(val: boolean) => toggleCheck(track.id, val)" />
           <t-tag class="indexTag" size="small">#{{ index + 1 }}</t-tag>
-          <t-tag class="selectTag" theme="success" size="small" v-if="track.selectVideoId">已选择</t-tag>
+          <t-tag class="selectTag" theme="success" size="small" v-if="track.selectVideoId">{{ $t("workbench.generate.selectedTag") }}</t-tag>
           <!-- 优先展示选中视频的首帧 -->
           <div class="thumbGroup" v-if="track.selectVideoId && getSelectedVideoSrc(track)">
             <img

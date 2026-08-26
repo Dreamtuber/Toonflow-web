@@ -1309,7 +1309,9 @@
           "clearSelection": "Bỏ chọn",
           "selectAll": "Chọn tất cả",
           "selectedCount": "Đã chọn {count}",
-          "selectFirst": "Vui lòng chọn bảng phân cảnh trước"
+          "selectFirst": "Vui lòng chọn bảng phân cảnh trước",
+          "generateFailed": "Tạo thất bại",
+          "batchDelete": "Xóa hàng loạt"
         },
         "storyboardTable": {
           "title": "Bảng danh sách phân cảnh",
@@ -1363,7 +1365,11 @@
         "closeConfirmBody": "Dữ liệu chưa lưu sẽ bị mất sau khi đóng",
         "audioRef": "Âm thanh {index}",
         "reference": "Tham khảo {index}",
-        "videoRef": "Video {index}"
+        "videoRef": "Video {index}",
+        "assetImage": "Ảnh tài sản",
+        "storyboardImage": "Ảnh phân cảnh",
+        "textRef": "Văn bản {index}",
+        "textBadge": "T"
       },
       "save": "Lựa chọn",
       "cancel": "Hủy",
@@ -1556,7 +1562,8 @@
           "audio": "Âm thanh",
           "subtitle": "Phụ đề",
           "filter": "Bộ lọc"
-        }
+        },
+        "clipNamingHint": "Đặt tên tệp video theo số # của nhóm phân cảnh tương ứng"
       },
       "clipType": {
         "video": "Video",
@@ -1762,7 +1769,10 @@
         "storyboardZip": "phancanh.zip"
       },
       "audioContent": "Nội dung âm thanh: {content}",
-      "storyboardIndex": "Phân cảnh {index}"
+      "storyboardIndex": "Phân cảnh {index}",
+      "selectedTag": "Đã chọn",
+      "selectedTrackCount": "Đã chọn {count} đoạn",
+      "mediaAudio": "Âm thanh"
     }
   },
   "login": {
