@@ -4,6 +4,14 @@
 declare const $t: (key: string, ...args: any[]) => string;
 
 /**
+ * Electron 预加载脚本注入的桥接对象，仅在桌面端存在
+ * Bridge object injected by the Electron preload script; desktop builds only
+ */
+interface Window {
+  $electron?: unknown;
+}
+
+/**
  * Vite 环境变量类型定义
  */
 interface ImportMetaEnv {
