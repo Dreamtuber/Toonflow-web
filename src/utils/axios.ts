@@ -36,11 +36,11 @@ instance.interceptors.response.use(
         className: "customNotifyFull", // 自定义类名
         content: () =>
           h("div", [
-            h("div", { style: { marginBottom: "8px" } }, "网络连接失败，请依次尝试："),
-            h("div", { style: { marginBottom: "4px" } }, "1. 右键程序图标 → 以管理员身份运行"),
-            h("div", { style: { marginBottom: "4px" } }, "2. 检查后端服务是否已正常启动"),
+            h("div", { style: { marginBottom: "8px" } }, window.$t("common.networkError.intro")),
+            h("div", { style: { marginBottom: "4px" } }, window.$t("common.networkError.step1")),
+            h("div", { style: { marginBottom: "4px" } }, window.$t("common.networkError.step2")),
             h("div", [
-              "3. 安装 Visual C++ 运行库：",
+              window.$t("common.networkError.step3"),
               h("div", { style: { display: "flex", gap: "8px", marginTop: "4px" } }, [
                 h(
                   "a",
@@ -50,7 +50,7 @@ instance.interceptors.response.use(
                     rel: "noopener noreferrer",
                     style: { color: "#0052d9" },
                   },
-                  "32位下载",
+                  window.$t("common.networkError.download32"),
                 ),
                 h(
                   "a",
@@ -60,7 +60,7 @@ instance.interceptors.response.use(
                     rel: "noopener noreferrer",
                     style: { color: "#0052d9" },
                   },
-                  "64位下载",
+                  window.$t("common.networkError.download64"),
                 ),
               ]),
             ]),

@@ -1201,7 +1201,12 @@
         "audioFile": "Audio File",
         "audioName": "Voice",
         "audioNamePh": "Please enter a voice",
-        "pleaseUploadAudio": "Please upload an audio file"
+        "pleaseUploadAudio": "Please upload an audio file",
+        "editTitle": "Edit",
+        "addTitle": "Add",
+        "audioTextPh": "Enter the transcript for this audio",
+        "audioDescPh": "Enter a description for this audio",
+        "addAudio": "Add Audio"
       },
       "gen": {
         "header": "Image Generation",
@@ -1913,6 +1918,14 @@
     "sessionExpired": "Your session has expired. Please sign in again",
     "submit": "Submit",
     "submitting": "Submitting",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "networkError": {
+      "intro": "Connection failed. Try the following in order:",
+      "step1": "1. Right-click the app icon → Run as administrator",
+      "step2": "2. Check that the backend service has started",
+      "step3": "3. Install the Visual C++ runtime:",
+      "download32": "32-bit download",
+      "download64": "64-bit download"
+    }
   }
 }

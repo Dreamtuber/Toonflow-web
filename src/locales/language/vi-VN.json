@@ -1201,7 +1201,12 @@
         "audioFile": "Tệp âm thanh",
         "audioName": "Giọng nói",
         "audioNamePh": "Vui lòng nhập giọng nói",
-        "pleaseUploadAudio": "Vui lòng tải lên tệp âm thanh"
+        "pleaseUploadAudio": "Vui lòng tải lên tệp âm thanh",
+        "editTitle": "Chỉnh sửa",
+        "addTitle": "Thêm mới",
+        "audioTextPh": "Nhập nội dung văn bản của tệp âm thanh này",
+        "audioDescPh": "Nhập mô tả cho tệp âm thanh này",
+        "addAudio": "Thêm âm thanh"
       },
       "gen": {
         "header": "Tạo hình ảnh",
@@ -1776,7 +1781,15 @@
     "editSuccess": "Cập nhật thành công",
     "editFailed": "Cập nhật thất bại",
     "submit": "Gửi",
-    "loading": "Đang tải..."
+    "loading": "Đang tải...",
+    "networkError": {
+      "intro": "Kết nối thất bại. Hãy thử lần lượt:",
+      "step1": "1. Nhấp chuột phải vào biểu tượng ứng dụng → Chạy với quyền quản trị",
+      "step2": "2. Kiểm tra dịch vụ backend đã khởi động chưa",
+      "step3": "3. Cài đặt Visual C++ runtime:",
+      "download32": "Tải bản 32-bit",
+      "download64": "Tải bản 64-bit"
+    }
   },
   "components.storyboardImageCheck.camera": "Máy quay",
   "components.storyboardImageCheck.dialogTitle": "Chọn hình storyboard",

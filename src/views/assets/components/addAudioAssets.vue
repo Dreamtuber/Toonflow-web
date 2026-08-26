@@ -3,7 +3,7 @@
     v-model:visible="addAssetsShow"
     :closable="false"
     width="40vw"
-    :header="props.formData.id ? '编辑' : '新增'"
+    :header="props.formData.id ? $t('workbench.assets.add.editTitle') : $t('workbench.assets.add.addTitle')"
     :maskClosable="false"
     @close-btn-click="handleCancel"
     @confirm="onConfirm"
@@ -48,12 +48,12 @@
                   <template #icon><i-close size="12" /></template>
                 </t-button>
               </div>
-              <t-input v-model="item.text" placeholder="请输入该音频对应的文本内容" class="audio-text-input" />
-              <t-input v-model="item.describe" placeholder="请输入该音频的描述" class="audio-text-input" />
+              <t-input v-model="item.text" :placeholder="$t('workbench.assets.add.audioTextPh')" class="audio-text-input" />
+              <t-input v-model="item.describe" :placeholder="$t('workbench.assets.add.audioDescPh')" class="audio-text-input" />
             </div>
             <t-button theme="primary" variant="outline" size="small" @click="addAudioItem">
               <template #icon><i-plus /></template>
-              添加音频
+              {{ $t("workbench.assets.add.addAudio") }}
             </t-button>
           </div>
         </t-form-item>
