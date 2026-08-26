@@ -1809,7 +1809,8 @@
       "step2": "2. Kiểm tra dịch vụ backend đã khởi động chưa",
       "step3": "3. Cài đặt Visual C++ runtime:",
       "download32": "Tải bản 32-bit",
-      "download64": "Tải bản 64-bit"
+      "download64": "Tải bản 64-bit",
+      "title": "Lỗi kết nối mạng"
     },
     "pageNotFound": "Không tìm thấy trang",
     "backHome": "Về trang chủ",

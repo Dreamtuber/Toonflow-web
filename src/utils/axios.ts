@@ -39,7 +39,7 @@ instance.interceptors.response.use(
     }
     if (error.message.includes("Network Error") || error.response.data?.message === "Network Error") {
       NotifyPlugin.error({
-        title: "Network Error",
+        title: window.$t("common.networkError.title"),
         closeBtn: true,
         duration: 3000, // 不自动关闭，让用户有时间看
         className: "customNotifyFull", // 自定义类名

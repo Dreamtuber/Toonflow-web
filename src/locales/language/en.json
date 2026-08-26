@@ -1946,7 +1946,8 @@
       "step2": "2. Check that the backend service has started",
       "step3": "3. Install the Visual C++ runtime:",
       "download32": "32-bit download",
-      "download64": "64-bit download"
+      "download64": "64-bit download",
+      "title": "Network Error"
     },
     "pageNotFound": "Page Not Found",
     "backHome": "Back to Home",

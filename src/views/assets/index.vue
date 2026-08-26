@@ -587,18 +587,6 @@ async function getFilteredData(type: string) {
 }
 // 加载当前标签的数据
 async function loadCurrentTabData() {
-  let type = "";
-  if (assetOptions.value === "role") {
-    type = "角色";
-  } else if (assetOptions.value === "tool") {
-    type = "道具";
-  } else if (assetOptions.value === "scene") {
-    type = "场景";
-  } else if (assetOptions.value === "clip") {
-    type = "素材";
-  } else if (assetOptions.value === "audio") {
-    type = "音频";
-  }
   await getFilteredData(assetOptions.value);
 }
 function selectAssetOptions(value: TabValue) {
