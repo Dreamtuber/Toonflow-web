@@ -38,7 +38,8 @@
       },
       "msg": {
         "fetchModelFailed": "Lấy dữ liệu mô hình thất bại:"
-      }
+      },
+      "goSetting": "Vào cài đặt để thêm mô hình"
     }
   },
   "settings": {
@@ -57,7 +58,10 @@
       "requestConfig": "Địa chỉ yêu cầu (API)",
       "about": "Kiểm tra cập nhật",
       "logoutConfig": "Đăng xuất",
-      "skillsSkillsManagement": "Kỹ năngQuản lý kỹ năng"
+      "skillsSkillsManagement": "Kỹ năngQuản lý kỹ năng",
+      "devConfig": "Tùy chọn nhà phát triển",
+      "modelMap": "Ánh xạ mô hình",
+      "ui": "Giao diện"
     },
     "language": {
       "desc": "Chọn ngôn ngữ hiển thị giao diện",
@@ -72,7 +76,6 @@
       "optionalSection": "Tùy chọn",
       "modelSettings": "Cài đặt mô hình",
       "addManually": "Thêm thủ công",
-      "test": "Kiểm tra",
       "edit": "Chỉnh sửa",
       "delete": "Xóa",
       "deleteVendor": "Xóa nhà cung cấp",
@@ -170,13 +173,56 @@
         "disabled": "Tàn tật",
         "linkAddVendorRiskBody": "Việc thêm nhà cung cấp AI mới sẽ cấp cho nhà cung cấp đó quyền truy cập vào API hệ thống, vui lòng đảm bảo rằng bạn tin cậy nguồn liên kết của nhà cung cấp đó!",
         "importAdd": "Việc thêm nhà cung cấp AI mới sẽ cấp cho nhà cung cấp đó quyền truy cập vào API hệ thống, vui lòng đảm bảo rằng bạn tin cậy vào nguồn tài liệu của nhà cung cấp đó!",
-        "linkAddFailed": "Không thể thêm liên kết"
+        "linkAddFailed": "Không thể thêm liên kết",
+        "vendorNeedsUpdate": "Phiên bản nhà cung cấp này đã cũ hoặc bị thiếu. Vui lòng cập nhật lên phiên bản 2.0 trở lên để có trải nghiệm tốt nhất."
       },
       "think": "suy nghĩ sâu sắc",
       "code": "mã số",
       "linkAddPlaceholder": "Nhập liên kết để thêm",
       "noFileSelected": "Đã nhập tệp thành công",
-      "linkAdd": "xác nhận"
+      "linkAdd": "xác nhận",
+      "test": {
+        "assistant": "Trợ lý",
+        "audio": "Âm thanh",
+        "cancel": "Hủy",
+        "clearHistory": "Xóa cuộc trò chuyện",
+        "endFrame": "Khung hình cuối (Bắt buộc)",
+        "endFrameOptional": "Khung hình cuối (Tùy chọn)",
+        "endFrameOptionalDesc": "Khung hình đầu bắt buộc, khung hình cuối tùy chọn",
+        "image": "Hình ảnh",
+        "imageTitle": "Kiểm tra tạo hình ảnh",
+        "imageToImage": "Hình ảnh -> Hình ảnh",
+        "multiRef": "Tham khảo nhiều ảnh",
+        "multiRefDesc": "Chế độ nhiều ảnh tham khảo",
+        "optional": "Tùy chọn",
+        "prompt": "Lời nhắc",
+        "promptPlaceholder": "Nhập lời nhắc",
+        "referenceImage": "Hình ảnh tham khảo",
+        "result": "Kết quả",
+        "selectMode": "Chọn chế độ kiểm tra",
+        "send": "Gửi",
+        "singleImageDesc": "Tạo video từ một ảnh tham khảo duy nhất",
+        "singleImageMode": "Tham khảo ảnh đơn",
+        "startEndRequiredDesc": "Cần cung cấp cả ảnh khung hình đầu và khung hình cuối",
+        "startFrame": "Khung hình đầu (Bắt buộc)",
+        "startFrameOptional": "Khung hình đầu (Tùy chọn)",
+        "startFrameOptionalDesc": "Khung hình cuối bắt buộc, khung hình đầu tùy chọn",
+        "startTest": "Bắt đầu kiểm tra",
+        "supportFormat": "Hỗ trợ JPG / PNG / WEBP",
+        "textEmptyHint": "Gửi một tin nhắn để bắt đầu kiểm tra",
+        "textInputPlaceholder": "Nhập tin nhắn, nhấn Ctrl+Enter để gửi",
+        "textTitle": "Kiểm tra hội thoại văn bản",
+        "textToImage": "Văn bản -> Hình ảnh",
+        "textToVideo": "Văn bản -> Video",
+        "textToVideoDesc": "Chỉ tạo video từ mô tả bằng văn bản",
+        "uploadAudio": "Nhấp hoặc kéo thả để tải lên âm thanh",
+        "uploadImage": "Nhấp hoặc kéo thả để tải lên hình ảnh",
+        "uploadVideo": "Nhấp hoặc kéo thả để tải lên video",
+        "video": "Video",
+        "videoPromptPlaceholder": "Nhập mô tả video (tùy chọn)",
+        "videoTitle": "Kiểm tra tạo video",
+        "you": "Bạn"
+      }
     },
     "agent": {
       "bannerDesc": "Nên sử dụng DeepSeek V4 chính thức",
@@ -248,7 +294,18 @@
         "noBinding": "Không bị ràng buộc",
         "bound": "ràng buộc",
         "unbind": "Hủy liên kết",
-        "filenName": "Tên tập tin"
+        "filenName": "Tên tập tin",
+        "addPrompt": "Thêm lời nhắc",
+        "addPromptTitle": "Thêm lời nhắc",
+        "editPrompt": "Chỉnh sửa",
+        "editPromptTitle": "Chỉnh sửa lời nhắc",
+        "promptNamePlaceholder": "Vui lòng nhập tên lời nhắc",
+        "promptNameRequired": "Vui lòng nhập tên lời nhắc",
+        "promptSaveSuccess": "Lưu thành công",
+        "promptTypePlaceholder": "Vui lòng chọn loại",
+        "typeImage": "Hình ảnh",
+        "typeText": "Văn bản",
+        "typeVideo": "Video"
       }
     },
     "login": {
@@ -329,7 +386,11 @@
       "zoom": "Phóng",
       "scroll": "cuộn",
       "isInteracting": "Tối ưu hóa hiệu suất kéo canvas không giới hạn trên trang sản xuất",
-      "closeIsInteracting": "đóng cửa"
+      "closeIsInteracting": "đóng cửa",
+      "openIsInteracting": "Bật",
+      "chars": "ký tự",
+      "inputChars": "Vui lòng nhập số ký tự",
+      "scriptEpisodeLength": "Giới hạn độ dài mỗi tập kịch bản"
     },
     "request": {
       "warning": "Nếu không có trường hợp đặc biệt, không cần sửa đổi hoặc cấu hình",
@@ -341,8 +402,11 @@
         "enterApi": "Vui lòng nhập địa chỉ API",
         "validUrl": "Vui lòng nhập địa chỉ HTTP/HTTPS hợp lệ",
         "saved": "Địa chỉ yêu cầu đã lưu thành công",
-        "reset": "Đã đặt lại về địa chỉ mặc định"
-      }
+        "reset": "Đã đặt lại về địa chỉ mặc định",
+        "refreshFailed": "Làm mới thất bại",
+        "refreshSuccess": "Làm mới thành công"
+      },
+      "refresh": "Làm mới"
     },
     "about": {
       "slogan": "Công cụ sáng tạo truyện tranh / phân cảnh mã nguồn mở do AI điều khiển",
@@ -361,7 +425,18 @@
       "updateAvailable": "phiên bản mới được tìm thấy",
       "upToDate": "Đã phát hiện phiên bản mới",
       "confirmReinstall": "Sao chép liên kết",
-      "reinstallRequired": "Trình duyệt sẽ tự động mở và tải xuống. Nếu nó không mở, hãy mở nó bằng tay."
+      "reinstallRequired": "Trình duyệt sẽ tự động mở và tải xuống. Nếu nó không mở, hãy mở nó bằng tay.",
+      "cancel": "Hủy",
+      "confirmUpdate": "Xác nhận cập nhật",
+      "currentVersion": "Phiên bản hiện tại",
+      "gitee": "Gitee",
+      "github": "GitHub",
+      "latestVersionLabel": "Phiên bản mới nhất",
+      "noUpdate": "Bạn đang dùng phiên bản mới nhất",
+      "selectUpdateSource": "Chọn nguồn cập nhật",
+      "updateFailed": "Cập nhật thất bại, vui lòng thử lại",
+      "updateSuccess": "Cập nhật thành công, vui lòng khởi động lại ứng dụng",
+      "updating": "Đang cập nhật..."
     },
     "logout": {
       "warning": "Sau khi đăng xuất, bạn cần đăng nhập lại để tiếp tục sử dụng hệ thống.",
@@ -391,7 +466,9 @@
         "web": "data/web",
         "webDesc": "Tài nguyên liên quan đến Web, như các sản phẩm build Frontend.",
         "serve": "data/serve",
-        "serveDesc": "Tệp liên quan đến dịch vụ Backend."
+        "serveDesc": "Tệp liên quan đến dịch vụ Backend.",
+        "vendor": "data/vendor",
+        "vendorDesc": "Thư mục nhà cung cấp."
       },
       "openFailed": "Mở thư mục thất bại"
     },
@@ -402,7 +479,149 @@
       "devtoolsDesc": "Sau khi bật lên sẽ tạo một thư mục .devtools trong thư mục cài đặt Toonflow. Hãy đảm bảo rằng Toonflow có quyền ghi (chạy với tư cách quản trị viên).",
       "devtoolsDesc2": "Chạy npx {'@'}ai-sdk/devtools trong thư mục này để bật gỡ lỗi đo từ xa",
       "openDevtoolFailed": "Không mở được công cụ dành cho nhà phát triển, vui lòng đảm bảo đã cài đặt Toonflow desktop",
-      "notInElectron": "Đối với môi trường WEB, vui lòng mở bảng điều khiển trình duyệt theo cách thủ công"
+      "notInElectron": "Đối với môi trường WEB, vui lòng mở bảng điều khiển trình duyệt theo cách thủ công",
+      "actions": "Thao tác",
+      "add": "Thêm",
+      "aiDevtool": "Bật/tắt chế độ máy tính",
+      "clearAll": "Xóa tất cả",
+      "copyKey": "Sao chép khóa",
+      "copyValue": "Sao chép giá trị",
+      "creating": "Đang tạo mục mới",
+      "delete": "Xóa",
+      "devtool": "Mở bảng điều khiển",
+      "edit": "Chỉnh sửa",
+      "editing": "Đang chỉnh sửa: {key}",
+      "format": "Định dạng JSON",
+      "localStorage": "Trình quản lý localStorage của trình duyệt",
+      "localStorageCount": "Tổng {total}, đang hiển thị {filtered}",
+      "localStorageKey": "Khóa",
+      "localStorageKeyPlaceholder": "Nhập khóa localStorage",
+      "localStorageSearchPlaceholder": "Tìm theo khóa hoặc giá trị",
+      "localStorageValue": "Giá trị",
+      "localStorageValuePlaceholder": "Nhập giá trị localStorage",
+      "msg": {
+        "cancel": "Hủy",
+        "clearConfirmBody": "Thao tác này sẽ xóa toàn bộ dữ liệu localStorage của trang hiện tại và không thể hoàn tác. Tiếp tục?",
+        "clearConfirmTitle": "Xác nhận xóa localStorage",
+        "confirmClear": "Xóa",
+        "confirmDelete": "Xóa",
+        "copyFailed": "Sao chép thất bại",
+        "deleteConfirmBody": "Bạn có chắc muốn xóa khóa: {key}?",
+        "deleteConfirmTitle": "Xác nhận xóa mục localStorage",
+        "localStorageCleared": "Đã xóa localStorage",
+        "localStorageDeleted": "Đã xóa mục localStorage",
+        "localStorageFormatFailed": "Định dạng thất bại. Vui lòng kiểm tra xem giá trị có phải JSON hợp lệ không",
+        "localStorageFormatted": "Đã định dạng JSON",
+        "localStorageKeyCopied": "Đã sao chép khóa",
+        "localStorageKeyExists": "Khóa này đã tồn tại. Vui lòng dùng khóa khác",
+        "localStorageKeyRequired": "Vui lòng nhập khóa localStorage",
+        "localStorageSaved": "Đã lưu mục localStorage",
+        "localStorageValueCopied": "Đã sao chép giá trị",
+        "localStorageValueEmpty": "Giá trị trống nên không thể định dạng"
+      },
+      "refresh": "Làm mới",
+      "reset": "Đặt lại",
+      "save": "Lưu",
+      "switchAiDevTool": "Bật/tắt {'@'}ai-sdk/devtools",
+      "update": "Cập nhật"
+    },
+    "generate": {
+      "delConfirmBtn": "Xác nhận xóa",
+      "modelChnageSure": "Xác nhận xóa trống"
+    },
+    "modelMap": {
+      "col": {
+        "mode": "Chế độ",
+        "prompt": "Lời nhắc"
+      },
+      "imageModel": "Mô hình hình ảnh",
+      "mode": {
+        "audioReference": "Âm thanh tham khảo",
+        "endFrameOptional": "Khung hình đầu và cuối (Khung hình cuối tùy chọn)",
+        "imageReference": "Hình ảnh tham khảo",
+        "multiReference": "Tham khảo nhiều ảnh",
+        "referenceSuffix": "Tham khảo",
+        "singleImage": "Ảnh đơn",
+        "startEndRequired": "Khung hình đầu và cuối (Bắt buộc cả hai)",
+        "startFrameOptional": "Khung hình đầu và cuối (Khung hình đầu tùy chọn)",
+        "text": "Văn bản -> Hình ảnh / Văn bản -> Video",
+        "videoReference": "Video tham khảo"
+      },
+      "msg": {
+        "saveFailed": "Lưu thất bại, vui lòng thử lại sau",
+        "saveSuccess": "Đã lưu ánh xạ lời nhắc của mô hình"
+      },
+      "noModel": "Chưa có mô hình hình ảnh hoặc video nào khả dụng, vui lòng thêm trong \"Dịch vụ mô hình\" trước",
+      "promptPlaceholder": "Nhập lời nhắc cho chế độ này",
+      "save": "Lưu cấu hình",
+      "videoModel": "Mô hình video"
+    },
+    "skill": {
+      "addSkill": "Thêm Skill",
+      "addSkillTitle": "Thêm Skill",
+      "aiGenerate": "AI tạo",
+      "attr": {
+        "productionDecision": "Sản xuất - Đạo diễn",
+        "productionExecution": "Sản xuất - Quay phim",
+        "productionSupervision": "Sản xuất - Giám sát",
+        "scriptDecision": "Agent Kịch bản - Điều phối",
+        "scriptExecution": "Agent Kịch bản - Biên kịch",
+        "scriptSupervision": "Agent Kịch bản - Biên tập",
+        "universalAgent": "Trợ lý sản xuất"
+      },
+      "attributionAgent": "Agent phụ trách",
+      "cancel": "Hủy",
+      "createSkill": "Tạo Skill",
+      "delete": "Xóa",
+      "description": "Mô tả",
+      "descriptionPlaceholder": "Mô tả mục đích của Skill này",
+      "edit": "Chỉnh sửa",
+      "editSkillTitle": "Chỉnh sửa Skill - ",
+      "embedding": "Nhúng",
+      "fileLost": "Thiếu tệp",
+      "filterAttribution": "Phụ trách",
+      "filterType": "Loại",
+      "importFromHub": "Nhập từ Toonflow-Hub",
+      "importFromHubDialog": "Nhập từ Toonflow-Hub",
+      "msg": {
+        "createFailed": "Tạo Skill thất bại",
+        "createSuccess": "Tạo Skill thành công",
+        "deleteConfirmBody": "Bạn có chắc muốn xóa Skill \"{name}\"? Thao tác này không thể hoàn tác.",
+        "deleteConfirmTitle": "Xác nhận xóa",
+        "deleteFailed": "Xóa thất bại",
+        "deleteSuccess": "Xóa thành công",
+        "descGenFailed": "Tạo mô tả thất bại",
+        "descGenSuccess": "Tạo mô tả thành công",
+        "embeddingFailed": "Nhúng thất bại",
+        "embeddingSuccess": "Đã nhúng xong",
+        "fetchListFailed": "Lấy danh sách Skill thất bại",
+        "fillContentFirst": "Vui lòng điền nội dung Markdown trước",
+        "fillNameFirst": "Vui lòng điền tên Skill trước",
+        "scanSuccess": "Quét xong, tìm thấy {count} tệp Skill",
+        "updateFailed": "Cập nhật Skill thất bại",
+        "updateSuccess": "Cập nhật Skill thành công"
+      },
+      "noAttribution": "Chưa phân công",
+      "noAttributionTip": "⚠️ Chưa phân công, không thể bật Skill",
+      "noEmbeddingTip": "⚠️ Chưa nhúng, không thể bật Skill",
+      "notEmbedded": "Chưa nhúng",
+      "path": "Đường dẫn",
+      "save": "Lưu",
+      "scanSkills": "Quét Skill",
+      "search": "Tìm kiếm",
+      "searchPlaceholder": "Tìm Skill theo tên",
+      "selectAttribution": "Chọn Agent phụ trách",
+      "shareLink": "Liên kết chia sẻ",
+      "skillName": "Tên Skill",
+      "skillNamePlaceholder": "ví dụ: writing-assistant",
+      "stateAttrError": "Lỗi phân công",
+      "stateEmptyDesc": "Mô tả trống",
+      "stateGenerating": "Đang tạo mô tả",
+      "stateMd5Changed": "MD5 đã thay đổi, nên cập nhật mô tả",
+      "stateNormal": "Bình thường",
+      "totalCount": "Tổng cộng {count} Skill",
+      "typeMain": "Cốt lõi",
+      "typeReferences": "Kỹ thuật"
     }
   },
   "workbench": {
@@ -524,7 +743,8 @@
         "directorManualUpdated": "Sổ tay Giám đốc được cập nhật",
         "directorManualAdded": "Đã thêm hướng dẫn sử dụng của Giám đốc",
         "directorManual": "Vui lòng chọn Sổ tay Giám đốc Dự án",
-        "modelProviderDisabled": "Nhà cung cấp mô hình video hoặc mô hình hình ảnh chưa được bật hoặc không có nhà cung cấp mô hình, vui lòng định cấu hình trước"
+        "modelProviderDisabled": "Nhà cung cấp mô hình video hoặc mô hình hình ảnh chưa được bật hoặc không có nhà cung cấp mô hình, vui lòng định cấu hình trước",
+        "enterProjectQuality": "Vui lòng chọn chất lượng hình ảnh"
       },
       "type": {
         "novel": "Dựa trên tiểu thuyết gốc",
@@ -641,7 +861,8 @@
         "startAnalysis": "Bắt đầu phân tích",
         "chapterHeader": "Chương {index} - {name}",
         "analyzing": "Đang phân tích sự kiện"
-      }
+      },
+      "viewDetail": "Xem chi tiết"
     },
     "scriptAgent": {
       "inputPlaceholder": "Vui lòng nhập nội dung",
@@ -690,7 +911,20 @@
         "confirmDelete": "Xác nhận xóa",
         "scriptDeleted": "Đã xóa tập lệnh"
       },
-      "reconnect": "kết nối lại"
+      "reconnect": "kết nối lại",
+      "deepThink": "Suy nghĩ sâu",
+      "forceGenerate": {
+        "cancel": "Hủy",
+        "confirm": "Vẫn tạo",
+        "desc": "Một số chương chưa phân tích xong sự kiện. Bạn vẫn muốn tạo chứ?",
+        "title": "Vẫn tạo?"
+      },
+      "thinkLevel": {
+        "deep": "Suy nghĩ sâu",
+        "extreme": "Suy nghĩ tối đa",
+        "light": "Suy nghĩ nhẹ",
+        "off": "Không suy nghĩ"
+      }
     },
     "cornerScape": {
       "batchSettings": "Cài đặt tạo hàng loạt",
@@ -747,7 +981,9 @@
         "replaceSuccess": "Thay thế thành công",
         "promptGenFail": "Tạo từ nhắc nhở không thành công",
         "saveSuccess": "Sửa đổi lời nhắc thành công",
-        "saveFailed": "Sửa đổi từ nhắc nhở không thành công"
+        "saveFailed": "Sửa đổi từ nhắc nhở không thành công",
+        "emptyPrompt": "Các mục đã chọn {emptyPromptNames} có lời nhắc trống, vui lòng tạo lời nhắc trước",
+        "selectAtLeastBindOne": "Chọn ít nhất một tài nguyên để gán"
       },
       "history": "hình ảnh lịch sử",
       "confirmReplace": "Xác nhận thay thế",
@@ -760,7 +996,13 @@
       "cancelGeneration": "Hủy tạo",
       "selectGenerating": "Chọn mục đang được tạo",
       "noGenerating": "Không có dữ liệu nào được tạo",
-      "checkNumber": "Chọn số lượng"
+      "checkNumber": "Chọn số lượng",
+      "assetsAudioLabel": "Âm thanh tham khảo",
+      "batchBingAudio": "Gán âm thanh hàng loạt",
+      "noAudio": "Chưa có âm thanh tham khảo",
+      "selectAudio": "Chọn âm thanh",
+      "textPromptInput": "Chỉ dẫn bổ sung cho lời nhắc",
+      "textPromptPh": "Nhập chỉ dẫn bổ sung cho lời nhắc (tùy chọn)"
     },
     "script": {
       "searchPlaceholder": "Tìm kiếm tên kịch bản...",
@@ -786,7 +1028,10 @@
         "batchDeleteSuccess": "Xóa hàng loạt thành công",
         "extractingInProgress": "Giải nén",
         "projectNotFound": "Không tìm thấy mục",
-        "selectsExport": "Vui lòng chọn xuất tập lệnh"
+        "selectsExport": "Vui lòng chọn xuất tập lệnh",
+        "extractFailed": "Trích xuất tài nguyên thất bại",
+        "extracting": "Đang trích xuất tài nguyên",
+        "waitExtract": "Chờ trích xuất"
       },
       "add": {
         "title": "Thêm kịch bản mới",
@@ -834,7 +1079,11 @@
       "deleteScript": "Xóa tập lệnh theo đợt",
       "extractAssets": "",
       "import": {
-        "episodeRegexPh": "Tùy chỉnh quy tắc chia tập lệnh, để trống để sử dụng quy tắc chia tập lệnh mặc định (mặc định là chia theo định dạng Tập X)"
+        "episodeRegexPh": "Tùy chỉnh quy tắc chia tập lệnh, để trống để sử dụng quy tắc chia tập lệnh mặc định (mặc định là chia theo định dạng Tập X)",
+        "col": {
+          "chapter": "Tập"
+        },
+        "getAiRegex": "Biểu thức chính quy do AI tạo"
       }
     },
     "assets": {
@@ -899,7 +1148,11 @@
         "describeRequired": "Vui lòng nhập chi tiết",
         "remarkRequired": "Vui lòng nhập ghi chú",
         "updateSuccess": "Cập nhật tài nguyên thành công",
-        "addSuccess": "Thêm tài nguyên thành công"
+        "addSuccess": "Thêm tài nguyên thành công",
+        "audioFile": "Tệp âm thanh",
+        "audioName": "Giọng nói",
+        "audioNamePh": "Vui lòng nhập giọng nói",
+        "pleaseUploadAudio": "Vui lòng tải lên tệp âm thanh"
       },
       "gen": {
         "header": "Tạo hình ảnh",
@@ -952,7 +1205,9 @@
       },
       "confirmCancellation": "Xác nhận hủy",
       "confirmAgain": "Xác nhận hủy? Sau khi hủy, AI phụ trợ sẽ tiếp tục yêu cầu khấu trừ.",
-      "sure": "Chắc chắn"
+      "sure": "Chắc chắn",
+      "audioName": "Giọng nói",
+      "preew": "1"
     },
     "production": {
       "selectPlaceholder": "Vui lòng chọn tập",
@@ -975,7 +1230,20 @@
           "imageLoadFailed": "Tải hình ảnh thất bại",
           "promptPlaceholder": "Vui lòng nhập từ gợi ý",
           "prompt": "lời nhắc",
-          "editInfo": "Sửa đổi từ nhanh chóng"
+          "editInfo": "Sửa đổi từ nhanh chóng",
+          "batchGenerateFailed": "Tạo thất bại",
+          "batchGenerateImage": "Tạo lại",
+          "batchGenerateSuccess": "Bắt đầu tạo phân cảnh",
+          "confirmBatchDeleteBody": "Bạn có chắc muốn xóa {index} phân cảnh đã chọn?",
+          "confirmDeleteBody": "Bạn có chắc muốn xóa phân cảnh này?",
+          "deleteNode": "Xóa",
+          "editNode": "Chỉnh sửa",
+          "removeFailed": "Xóa phân cảnh thất bại",
+          "videoDesc": "Mô tả video",
+          "videoDescPlaceholder": "Vui lòng nhập mô tả video",
+          "clearSelection": "Bỏ chọn",
+          "selectAll": "Chọn tất cả",
+          "selectedCount": "Đã chọn {count}"
         },
         "storyboardTable": {
           "title": "Bảng danh sách phân cảnh",
@@ -1026,7 +1294,10 @@
         "uploadImage": "Tải lên hình ảnh nội dung",
         "mode": "người mẫu",
         "closeConfirmTitle": "Đóng bảng chỉnh sửa?",
-        "closeConfirmBody": "Dữ liệu chưa lưu sẽ bị mất sau khi đóng"
+        "closeConfirmBody": "Dữ liệu chưa lưu sẽ bị mất sau khi đóng",
+        "audioRef": "Âm thanh {index}",
+        "reference": "Tham khảo {index}",
+        "videoRef": "Video {index}"
       },
       "save": "Lựa chọn",
       "cancel": "Hủy",
@@ -1060,7 +1331,7 @@
         "importingLoading": "Đang nhập, vui lòng chờ...",
         "mainTrackVideo": "Track chính (Video)",
         "subtitle1": "Phụ đề 1",
-        "storyboardVideoName": "{bảng phân cảnh}-{id}.mp4"
+        "storyboardVideoName": "{storyboard}-{id}.mp4"
       },
       "preview": {
         "noImage": "Chưa có hình ảnh",
@@ -1144,9 +1415,13 @@
         "configNotFound": "Cấu hình không tồn tại",
         "pollingFailed": "Truy vấn trạng thái video không thành công, vui lòng làm mới theo cách thủ công",
         "batchGeneratePrompt": "Tạo các từ nhắc nhở theo đợt",
-        "batchPromptEmpty": "Có sẵn bảng phân cảnh {name} cho lời nhắc bằng video. Vui lòng tạo hoặc điền vào lời nhắc trước",
+        "batchPromptEmpty": "Phân cảnh {names} có lời nhắc video trống. Vui lòng tạo hoặc điền lời nhắc trước",
         "modelEmpty": "Trước tiên hãy chọn mô hình tạo video",
-        "generatingPrompt": "Tạo lời nhắc thông minh"
+        "generatingPrompt": "Tạo lời nhắc thông minh",
+        "statePending": "Chờ sản xuất",
+        "stateSuccess": "Tạo thành công",
+        "batchModelEmpty": "Phân cảnh {names} chưa cấu hình mô hình. Vui lòng chọn mô hình trước",
+        "promptEmpty": "Vui lòng nhập lời nhắc video trước"
       },
       "editVideo": {
         "reset": "Đặt lại",
@@ -1297,7 +1572,15 @@
       "autoLayoutTB": "Tự động sắp chữ bố cục trên và dưới",
       "getFlowData": "Làm mới không gian làm việc",
       "confirm": "Xác nhận chuyển tập",
-      "confirmEpisodesSwitch": "Nhiệm vụ hiện tại vẫn đang được tiến hành. Việc chuyển các tập sẽ kết nối lại phiên. Bạn có muốn tiếp tục chuyển đổi không?"
+      "confirmEpisodesSwitch": "Nhiệm vụ hiện tại vẫn đang được tiến hành. Việc chuyển các tập sẽ kết nối lại phiên. Bạn có muốn tiếp tục chuyển đổi không?",
+      "guideCanvasNav": "Điều hướng canvas",
+      "guideCanvasNavBody": "Cuộn để di chuyển theo chiều dọc, Ctrl + Cuộn để thu phóng, giữ chuột trái và kéo để di chuyển tự do",
+      "guideLayoutBtn": "Tự động sắp xếp",
+      "guideLayoutBtnBody": "Nhấp nút này để tự động sắp xếp bố cục các nút",
+      "guideRefresh": "Làm mới dữ liệu",
+      "guideRefreshBody": "Nhấp nút làm mới để tải lại dữ liệu không gian làm việc",
+      "guideRightChat": "Trò chuyện với AI",
+      "guideRightChatBody": "Trò chuyện với AI ở bảng bên phải để chạy các quy trình tự động"
     },
     "task": {
       "title": "Danh sách tác vụ",
@@ -1354,7 +1637,7 @@
       "generateConfirmBody": "Xác nhận để tạo video",
       "generateVideosInBatches": "Tạo video hàng loạt",
       "generateStarted": "Bắt đầu xây dựng",
-      "promptEmpty": "Kiểm tra dữ liệu cần tạo video và từ nhắc trống. Bạn có muốn tiếp tục tạo nó không?",
+      "promptEmpty": "Một số mục đã chọn có lời nhắc trống. Vẫn tiếp tục tạo?",
       "skipDataWithEmptyVideoPromptWords": "Dữ liệu video cần được tạo đã tồn tại và từ nhắc trống.",
       "duration": "khoảng thời gian",
       "resolution": "nghị quyết",
@@ -1372,7 +1655,11 @@
       "videoPreview": "Xem trước video",
       "referenceImage": "Hình ảnh tham khảo",
       "generatePrompt": "Tạo các từ nhắc nhở",
-      "generateVideo": "Tạo video"
+      "generateVideo": "Tạo video",
+      "generateSuccess": "Tạo video thành công",
+      "modeChange": "Xóa nội dung",
+      "modeChangeConfirm": "Chuyển chế độ sẽ xóa các hình ảnh và lời nhắc đang chọn",
+      "prompt": "Lời nhắc video"
     }
   },
   "login": {
@@ -1392,16 +1679,16 @@
   "common": {
     "cancel": "Hủy",
     "confirm": "Xác nhận",
-    "selectAssets": "Chọn tài sản",
-    "sessionExpired": "Phiên đã hết hạn, vui lòng đăng nhập lại",
+    "selectAssets": "Chọn tài nguyên",
+    "sessionExpired": "Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại",
     "openSettings": "Mở cài đặt",
     "cancelled": "Đã hủy tạo",
-    "defaultReel": "Tập chính",
-    "save": "cứu",
+    "defaultReel": "Quyển chính",
+    "save": "Lưu",
     "submitting": "Đang gửi",
-    "editSuccess": "Sửa đổi thành công",
-    "editFailed": "Sửa đổi không thành công",
-    "submit": "nộp"
+    "editSuccess": "Cập nhật thành công",
+    "editFailed": "Cập nhật thất bại",
+    "submit": "Gửi"
   },
   "components.storyboardImageCheck.camera": "Máy quay",
   "components.storyboardImageCheck.dialogTitle": "Chọn hình storyboard",
@@ -1461,7 +1748,8 @@
     "state": {
       "unused": "Không được tạo"
     },
-    "saveSuccess": "Đã thêm thành công"
+    "saveSuccess": "Đã thêm thành công",
+    "assetsNotExists": "Tài nguyên không tồn tại"
   },
   "productionAgent": {
     "generating": "Đang tạo"
@@ -1488,7 +1776,7 @@
   "selectAll": "Chọn tất cả",
   "selected": "Đã chọn",
   "importVideo": "Nhập video",
-  "emptyTrack": "Đoạn {chỉ mục 1}",
+  "emptyTrack": "123",
   "del": "Xác nhận xóa",
   "delConfirm": "Bạn có chắc chắn muốn xóa đoạn này?",
   "selectSource": "Chọn nguồn",
