@@ -1,3 +1,5 @@
+import { defaultChapterRegexString } from "@/utils/chapterRegex";
+
 export default defineStore(
   "setting",
   () => {
@@ -13,7 +15,9 @@ export default defineStore(
     const otherSetting = ref({
       axiosTimeOut: 60 * 10 * 1000,
       assetsBatchGenereateSize: 5,
-      chapterReg: "/第\\s*([0-9０-９零一二三四五六七八九十百千万]+)\\s*[章回节]\\s*([^\\n\\r]*)/g",
+      // 首次启动时按界面语言给出默认章节正则；已保存的设置不会被覆盖。
+      // Seeded from the interface locale on first launch; a saved setting is never overwritten.
+      chapterReg: defaultChapterRegexString(),
       interacting: true,
       scriptEpisodeLength: 5000,
     });

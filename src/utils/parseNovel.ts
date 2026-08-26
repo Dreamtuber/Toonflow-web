@@ -1,6 +1,6 @@
 import settingStore from "@/stores/setting";
+import { defaultChapterRegex } from "@/utils/chapterRegex";
 const REEL_REGEX = /^(第[\d一二三四五六七八九十百千]+卷)\s*([^\n第]*)/gm;
-const DEFAULT_CHAPTER_REGEX = /第\s*([0-9０-９零一二三四五六七八九十百千万]+)\s*[章回节]\s*([^\n\r]*)/g;
 const CHINESE_NUM_MAP: { [key: string]: number } = {
   零: 0,
   一: 1,
@@ -62,7 +62,9 @@ export default function parseNovel(text: string): Reel[] {
       CHAPTER_REGEX = new RegExp(regStr);
     }
   } else {
-    CHAPTER_REGEX = DEFAULT_CHAPTER_REGEX;
+    // 设置里没有正则时，退回当前界面语言的默认值。
+    // With no regex in settings, fall back to the current interface locale's default.
+    CHAPTER_REGEX = defaultChapterRegex();
   }
 
   // 没有卷结构
