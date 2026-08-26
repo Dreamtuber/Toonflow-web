@@ -3,6 +3,7 @@ import router from "@/router/index";
 import { storeToRefs } from "pinia";
 import { MessagePlugin, NotifyPlugin, type TNode } from "tdesign-vue-next";
 import settingStore from "@/stores/setting";
+import i18n from "@/locales";
 import { h } from "vue";
 const instance = axios.create();
 
@@ -14,6 +15,14 @@ instance.interceptors.request.use(function (config) {
   if (token) {
     config.headers.Authorization = token;
   }
+  // 后端从 X-Toonflow-Lang 请求头解析面向用户的文案（只取首个 `-` 之前的子标签），
+  // 缺少该头时才回退到服务端保存的 content_language 设置。始终发送完整的界面语言
+  // 标记（en / vi-VN / zh-CN），让后端跟随界面语言。
+  // The backend resolves person-facing text from the X-Toonflow-Lang header (it
+  // reads the subtag before the first "-"), falling back to the stored
+  // content_language setting only when the header is absent. Always send the full
+  // interface locale tag (en / vi-VN / zh-CN) so the backend follows the UI.
+  config.headers["X-Toonflow-Lang"] = i18n.global.locale.value;
 
   return config;
 });
