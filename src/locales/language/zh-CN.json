@@ -259,13 +259,19 @@
         "linkAddFailed": "链接添加失败",
         "linkReturnedHtml": "链接返回了一个网页，添加供应商需要返回TS代码，请确认链接是否正确",
         "linkReturnedHtmlBody": "请勿输入中转站地址，如需使用中转站请修改OpenAI标准接口的baseUrl使用中转站地址",
-        "linkContentInvalid": "链接返回的内容不正确，添加供应商需要返回TS代码，请确认链接是否正确"
+        "linkContentInvalid": "链接返回的内容不正确，添加供应商需要返回TS代码，请确认链接是否正确",
+        "operationFailed": "操作失败"
       },
       "think": "深度思考",
       "code": "代码",
       "linkAddPlaceholder": "输入链接添加",
       "noFileSelected": "成功导入文件",
-      "linkAdd": "确认"
+      "linkAdd": "确认",
+      "importAddMode": "通过文件导入",
+      "linkAddMode": "通过链接添加",
+      "codeAddMode": "通过代码添加",
+      "linkAddWarning": "请填写 TypeScript 代码文件的链接（.ts 文件），不要填 API 地址或其他无关链接。 确认后 Toonflow 会自动加载该代码，请确保链接来源可信。",
+      "count": "数量"
     },
     "agent": {
       "bannerDesc": "推荐使用官方DeepSeek V4",
@@ -355,7 +361,8 @@
         "typeVideo": "视频",
         "promptNameRequired": "请输入提示词名称",
         "promptSaveSuccess": "保存成功"
-      }
+      },
+      "modelFilePathHelp": "向量模型文件路径：/data/models/{path}"
     },
     "login": {
       "username": "用户名",

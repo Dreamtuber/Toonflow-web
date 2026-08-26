@@ -180,7 +180,8 @@
         "vendorNeedsUpdate": "Phiên bản nhà cung cấp này đã cũ hoặc bị thiếu. Vui lòng cập nhật lên phiên bản 2.0 trở lên để có trải nghiệm tốt nhất.",
         "linkReturnedHtml": "Liên kết trả về một trang web. Việc thêm nhà cung cấp yêu cầu liên kết trả về mã TypeScript — vui lòng kiểm tra lại liên kết",
         "linkReturnedHtmlBody": "Không nhập địa chỉ máy chủ trung chuyển ở đây. Nếu cần dùng máy chủ trung chuyển, hãy đặt địa chỉ đó làm baseUrl của giao diện OpenAI tiêu chuẩn",
-        "linkContentInvalid": "Liên kết trả về nội dung không hợp lệ. Việc thêm nhà cung cấp yêu cầu liên kết trả về mã TypeScript — vui lòng kiểm tra lại liên kết"
+        "linkContentInvalid": "Liên kết trả về nội dung không hợp lệ. Việc thêm nhà cung cấp yêu cầu liên kết trả về mã TypeScript — vui lòng kiểm tra lại liên kết",
+        "operationFailed": "Thao tác thất bại"
       },
       "think": "suy nghĩ sâu sắc",
       "code": "mã số",
@@ -228,7 +229,12 @@
         "videoPromptPlaceholder": "Nhập mô tả video (tùy chọn)",
         "videoTitle": "Kiểm tra tạo video",
         "you": "Bạn"
-      }
+      },
+      "importAddMode": "Nhập từ tệp",
+      "linkAddMode": "Thêm qua liên kết",
+      "codeAddMode": "Thêm qua mã",
+      "linkAddWarning": "Vui lòng nhập liên kết tới tệp mã TypeScript (tệp .ts), không nhập địa chỉ API hay liên kết không liên quan. Sau khi bạn xác nhận, Toonflow sẽ tự động tải mã này, vì vậy hãy chắc chắn liên kết đến từ nguồn đáng tin cậy.",
+      "count": "Số lượng"
     },
     "agent": {
       "bannerDesc": "Nên sử dụng DeepSeek V4 chính thức",
@@ -318,7 +324,8 @@
         "typeImage": "Hình ảnh",
         "typeText": "Văn bản",
         "typeVideo": "Video"
-      }
+      },
+      "modelFilePathHelp": "Đường dẫn tệp mô hình vector: /data/models/{path}"
     },
     "login": {
       "username": "Tên người dùng",
