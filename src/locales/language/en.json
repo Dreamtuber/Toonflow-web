@@ -733,7 +733,22 @@
         "directorManualName": "Director's Manual Name",
         "directorManualNamePh": "Enter Director's Manual name",
         "directorFile": "Director's Manual Document",
-        "directorManualCover": "Director's Manual Cover"
+        "directorManualCover": "Director's Manual Cover",
+        "tab": {
+          "prefix": "Prefix",
+          "character": "Character",
+          "characterDerivative": "Character Derivatives",
+          "prop": "Prop",
+          "propDerivative": "Prop Derivatives",
+          "scene": "Scene",
+          "sceneDerivative": "Scene Derivatives",
+          "storyboard": "Storyboard",
+          "storyboardVideo": "Storyboard Video",
+          "directorPlanningStyle": "Technique - Director Planning",
+          "storyboardTableStyle": "Technique - Storyboard Design",
+          "directorPlanning": "Director Planning",
+          "storyboardTable": "Storyboard Table"
+        }
       },
       "msg": {
         "fetchFailed": "Failed to fetch project list",

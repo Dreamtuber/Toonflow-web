@@ -742,7 +742,22 @@
         "directorManualName": "导演手册名称",
         "directorManualNamePh": "输入导演手册名称",
         "directorFile": "导演手册文件",
-        "directorManualCover": "导演手册封面"
+        "directorManualCover": "导演手册封面",
+        "tab": {
+          "prefix": "前缀",
+          "character": "角色",
+          "characterDerivative": "角色衍生",
+          "prop": "道具",
+          "propDerivative": "道具衍生",
+          "scene": "场景",
+          "sceneDerivative": "场景衍生",
+          "storyboard": "分镜",
+          "storyboardVideo": "分镜视频",
+          "directorPlanningStyle": "技法-导演规划",
+          "storyboardTableStyle": "技法-分镜表设计",
+          "directorPlanning": "导演规划",
+          "storyboardTable": "分镜表"
+        }
       },
       "msg": {
         "fetchFailed": "获取项目列表失败",

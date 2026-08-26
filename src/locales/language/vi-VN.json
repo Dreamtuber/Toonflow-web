@@ -733,7 +733,22 @@
         "directorManualName": "Tên sổ tay giám đốc",
         "directorManualNamePh": "Nhập tên Sổ tay Giám đốc",
         "directorFile": "Tài liệu hướng dẫn của Giám đốc",
-        "directorManualCover": "Bìa sách hướng dẫn của giám đốc"
+        "directorManualCover": "Bìa sách hướng dẫn của giám đốc",
+        "tab": {
+          "prefix": "Tiền tố",
+          "character": "Nhân vật",
+          "characterDerivative": "Nhân vật phái sinh",
+          "prop": "Đạo cụ",
+          "propDerivative": "Đạo cụ phái sinh",
+          "scene": "Cảnh",
+          "sceneDerivative": "Cảnh phái sinh",
+          "storyboard": "Phân cảnh",
+          "storyboardVideo": "Video phân cảnh",
+          "directorPlanningStyle": "Kỹ thuật - Kế hoạch đạo diễn",
+          "storyboardTableStyle": "Kỹ thuật - Thiết kế phân cảnh",
+          "directorPlanning": "Kế hoạch đạo diễn",
+          "storyboardTable": "Bảng phân cảnh"
+        }
       },
       "msg": {
         "fetchFailed": "Lấy danh sách dự án thất bại",
