@@ -1058,7 +1058,9 @@
       "noAudio": "No audio reference available",
       "selectAudio": "Select Audio",
       "textPromptInput": "Extra Prompt Instructions",
-      "textPromptPh": "Enter extra prompt instructions (optional)"
+      "textPromptPh": "Enter extra prompt instructions (optional)",
+      "promptGenerated": "Prompt Generated",
+      "promptNotGenerated": "No Prompt Generated"
     },
     "script": {
       "searchPlaceholder": "Search script names...",
@@ -1213,7 +1215,9 @@
         "addTitle": "Add",
         "audioTextPh": "Enter the transcript for this audio",
         "audioDescPh": "Enter a description for this audio",
-        "addAudio": "Add Audio"
+        "addAudio": "Add Audio",
+        "uploaded": "Uploaded",
+        "uploadAudioHint": "Click or drag to upload audio"
       },
       "gen": {
         "header": "Image Generation",

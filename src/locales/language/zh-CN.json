@@ -1059,7 +1059,9 @@
       "cancelGeneration": "取消生成",
       "selectGenerating": "选择正在生成项",
       "noGenerating": "没有正在生成的数据",
-      "checkNumber": "选择数量"
+      "checkNumber": "选择数量",
+      "promptGenerated": "已生成提示词",
+      "promptNotGenerated": "未生成提示词"
     },
     "script": {
       "searchPlaceholder": "搜索剧本名称...",
@@ -1204,7 +1206,9 @@
         "addTitle": "新增",
         "audioTextPh": "请输入该音频对应的文本内容",
         "audioDescPh": "请输入该音频的描述",
-        "addAudio": "添加音频"
+        "addAudio": "添加音频",
+        "uploaded": "已上传",
+        "uploadAudioHint": "点击或拖拽上传音频"
       },
       "gen": {
         "header": "图片生成",

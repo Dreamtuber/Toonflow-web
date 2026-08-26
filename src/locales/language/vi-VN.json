@@ -1058,7 +1058,9 @@
       "noAudio": "Chưa có âm thanh tham khảo",
       "selectAudio": "Chọn âm thanh",
       "textPromptInput": "Chỉ dẫn bổ sung cho lời nhắc",
-      "textPromptPh": "Nhập chỉ dẫn bổ sung cho lời nhắc (tùy chọn)"
+      "textPromptPh": "Nhập chỉ dẫn bổ sung cho lời nhắc (tùy chọn)",
+      "promptGenerated": "Đã tạo prompt",
+      "promptNotGenerated": "Chưa tạo prompt"
     },
     "script": {
       "searchPlaceholder": "Tìm kiếm tên kịch bản...",
@@ -1213,7 +1215,9 @@
         "addTitle": "Thêm mới",
         "audioTextPh": "Nhập nội dung văn bản của tệp âm thanh này",
         "audioDescPh": "Nhập mô tả cho tệp âm thanh này",
-        "addAudio": "Thêm âm thanh"
+        "addAudio": "Thêm âm thanh",
+        "uploaded": "Đã tải lên",
+        "uploadAudioHint": "Nhấp hoặc kéo thả để tải âm thanh lên"
       },
       "gen": {
         "header": "Tạo hình ảnh",

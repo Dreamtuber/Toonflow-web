@@ -31,11 +31,11 @@
                   <template v-else-if="item.src">
                     <i-volume-notice size="16" fill="var(--td-success-color)" />
                     <span class="audio-filename audio-filename--existing">{{ item.name }}</span>
-                    <t-tag size="small" theme="success" variant="light" style="margin-left: auto; flex-shrink: 0">已上传</t-tag>
+                    <t-tag size="small" theme="success" variant="light" style="margin-left: auto; flex-shrink: 0">{{ $t("workbench.assets.add.uploaded") }}</t-tag>
                   </template>
                   <template v-else>
                     <i-upload-one size="16" fill="var(--td-brand-color)" />
-                    <span class="audio-upload-hint">点击或拖拽上传音频</span>
+                    <span class="audio-upload-hint">{{ $t("workbench.assets.add.uploadAudioHint") }}</span>
                   </template>
                   <input
                     :ref="(el) => (fileInputRefs[index] = el as HTMLInputElement)"
