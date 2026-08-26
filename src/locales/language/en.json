@@ -1926,6 +1926,9 @@
       "step3": "3. Install the Visual C++ runtime:",
       "download32": "32-bit download",
       "download64": "64-bit download"
-    }
+    },
+    "pageNotFound": "Page Not Found",
+    "backHome": "Back to Home",
+    "testButton": "Test Button"
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="test">
-    <t-button theme="primary" @click="test">测试按钮</t-button>
+    <t-button theme="primary" @click="test">{{ $t("common.testButton") }}</t-button>
     <pre>
       {{ log }}
     </pre>

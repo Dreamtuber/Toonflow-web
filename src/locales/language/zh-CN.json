@@ -1768,7 +1768,10 @@
       "step3": "3. 安装 Visual C++ 运行库：",
       "download32": "32位下载",
       "download64": "64位下载"
-    }
+    },
+    "pageNotFound": "页面不存在",
+    "backHome": "返回首页",
+    "testButton": "测试按钮"
   },
   "workbench.project.msg.enterProjectQuality": "请选择图片质量",
   "promptManage": {

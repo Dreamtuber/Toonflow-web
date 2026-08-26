@@ -1789,7 +1789,10 @@
       "step3": "3. Cài đặt Visual C++ runtime:",
       "download32": "Tải bản 32-bit",
       "download64": "Tải bản 64-bit"
-    }
+    },
+    "pageNotFound": "Không tìm thấy trang",
+    "backHome": "Về trang chủ",
+    "testButton": "Nút kiểm thử"
   },
   "components.storyboardImageCheck.camera": "Máy quay",
   "components.storyboardImageCheck.dialogTitle": "Chọn hình storyboard",
