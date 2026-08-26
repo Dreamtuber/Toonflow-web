@@ -1697,7 +1697,6 @@
       "generating": "Generating",
       "generateFailed": "Check the failure reason",
       "selectAll": "Select all",
-      "selected": "Selected",
       "batchGenerateText": "Generate prompt words in batches",
       "batchGenerateVideo": "Generate videos in batches",
       "importVideo": "Import to editing desk",

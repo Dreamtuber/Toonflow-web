@@ -1677,7 +1677,6 @@
       "generating": "生成中",
       "generateFailed": "查看失败原因",
       "selectAll": "全选",
-      "selected": "已选",
       "batchGenerateText": "批量生成提示词",
       "batchGenerateVideo": "批量生成视频",
       "importVideo": "导入剪辑台",
