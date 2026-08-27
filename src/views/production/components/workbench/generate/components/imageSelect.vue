@@ -14,7 +14,7 @@
           <t-tooltip theme="primary" v-else-if="item.fileType == 'audio'" :content="item?.prompt || ''">
             <div class="mediaPreview audioPreview">
               <i-acoustic size="20" />
-              <span class="mediaLabel">音频</span>
+              <span class="mediaLabel">{{ $t("workbench.generate.mediaAudio") }}</span>
             </div>
           </t-tooltip>
           <div v-else-if="item.fileType == 'video'" class="mediaPreview videoPreview">
@@ -22,8 +22,8 @@
           </div>
         </template>
         <template v-else>
-          <t-tooltip theme="primary" :content="item?.prompt ? '音频内容：' + item.prompt : ''">
-            <span style="font-size: 20px">文</span>
+          <t-tooltip theme="primary" :content="item?.prompt ? $t('workbench.generate.audioContent', { content: item.prompt }) : ''">
+            <span style="font-size: 20px">{{ $t("workbench.production.editImage.textBadge") }}</span>
           </t-tooltip>
         </template>
         <div class="imageTitleWrap" v-if="item.sources == 'storyboard' && item.index != null">
@@ -52,7 +52,7 @@
             </t-image>
             <div v-else-if="imageList?.[index]?.fileType == 'audio'" class="mediaPreview audioPreview">
               <i-acoustic size="20" />
-              <span class="mediaLabel">音频</span>
+              <span class="mediaLabel">{{ $t("workbench.generate.mediaAudio") }}</span>
             </div>
             <div v-else-if="imageList?.[index]?.fileType == 'video'" class="mediaPreview videoPreview">
               <video class="uploadPreview" :src="imageList?.[index]!.src" preload="metadata" muted />
@@ -60,7 +60,7 @@
           </template>
           <template v-else>
             <t-tooltip theme="primary" :content="imageList?.[index]?.prompt || ''">
-              <span style="font-size: 20px">文</span>
+              <span style="font-size: 20px">{{ $t("workbench.production.editImage.textBadge") }}</span>
             </t-tooltip>
           </template>
           <div class="imageTitleWrap" v-if="imageList?.[index]?.sources == 'storyboard' && imageList?.[index]?.index != null">
@@ -101,7 +101,7 @@
           <img v-if="sb.src" :src="sb.src" />
           <div v-else class="textBox ac jc">
             <t-tooltip theme="primary" :content="sb?.videoDesc || ''">
-              <span style="font-size: 20px">{{ `分镜 ${sb?.index + 1 || ""}` }}</span>
+              <span style="font-size: 20px">{{ $t("workbench.generate.storyboardIndex", { index: sb?.index != null ? sb.index + 1 : "" }) }}</span>
             </t-tooltip>
           </div>
         </div>
@@ -136,8 +136,8 @@ const buildLabel = computed(() => {
   const startOptional = props.mode === "startFrameOptional";
   const endOptional = props.mode === "endFrameOptional";
   return [
-    { label: startOptional ? "首帧(可选)" : "首帧", value: "start" },
-    { label: endOptional ? "尾帧(可选)" : "尾帧", value: "end" },
+    { label: startOptional ? $t("workbench.production.generate.startFrameOptional") : $t("workbench.production.generate.startFrame"), value: "start" },
+    { label: endOptional ? $t("workbench.production.generate.endFrameOptional") : $t("workbench.production.generate.endFrame"), value: "end" },
   ];
 });
 

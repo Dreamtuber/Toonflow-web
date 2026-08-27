@@ -1,5 +1,4 @@
-// 默认剧本集正则：匹配"第X集 标题"格式，支持中文数字和阿拉伯数字
-const DEFAULT_EPISODE_REGEX = /第\s*([0-9０-９零一二三四五六七八九十百千万]+)\s*集\s*([^\n\r]*)/g;
+import { defaultEpisodeRegex } from "@/utils/chapterRegex";
 
 const CHINESE_NUM_MAP: { [key: string]: number } = {
   零: 0,
@@ -72,12 +71,15 @@ function parseRegStr(regStr: string): RegExp {
 export default function parseScript(text: string, customRegStr?: string): Episode[] {
   let EPISODE_REGEX: RegExp;
 
-  // 优先级：调用方传入 > 默认正则
+  // 优先级：调用方传入 > 界面语言默认正则
+  // Priority: caller-supplied > the interface locale's default
   const regStr = customRegStr?.trim();
   if (regStr) {
     EPISODE_REGEX = parseRegStr(regStr);
   } else {
-    EPISODE_REGEX = DEFAULT_EPISODE_REGEX;
+    // 调用方没传正则时，退回当前界面语言的默认值。
+    // With nothing passed in, fall back to the current interface locale's default.
+    EPISODE_REGEX = defaultEpisodeRegex();
   }
 
   EPISODE_REGEX.lastIndex = 0;

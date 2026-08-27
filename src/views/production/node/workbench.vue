@@ -30,17 +30,14 @@
 <script setup lang="ts">
 import workbench from "../components/workbench/index.vue";
 import { Handle, Position } from "@vue-flow/core";
+import type { FlowData } from "../utils/flowBuilder";
 
 const visible = ref(false);
 
-interface WorkbenchData {
-  name: string;
-  duration: string;
-  resolution: string;
-  fps: string;
+type WorkbenchData = FlowData["workbench"] & {
   cover?: string;
   gradient?: string;
-}
+};
 
 const props = defineProps<{
   id: string;

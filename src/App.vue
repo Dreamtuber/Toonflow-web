@@ -1,6 +1,6 @@
 <template>
   <div v-if="loading" class="app-loading">
-    <t-loading :loading="true" size="large" text="加载中..." />
+    <t-loading :loading="true" size="large" :text="$t('common.loading')" />
   </div>
   <template v-else>
     <titleBar v-if="isElectron" />
@@ -15,7 +15,7 @@ import settingStore from "@/stores/setting";
 import { merge } from "lodash";
 import zhConfig from "tdesign-vue-next/es/locale/zh_CN";
 import enConfig from "tdesign-vue-next/es/locale/en_US";
-import { cachedLocale, languageList } from "@/locales";
+import { cachedLocale } from "@/locales";
 import { initTheme } from "@/utils/theme";
 import { type GlobalConfigProvider } from "tdesign-vue-next";
 import { useI18n } from "vue-i18n";
@@ -116,15 +116,7 @@ async function getPort() {
     },
   });
 
-  try {
-    const language = navigator.language;
-    if (language && languageList.some((item) => item.value === language)) {
-      cachedLocale.value = language;
-      locale.value = language;
-    }
-  } catch (e) {
-    console.error("获取语言失败", e);
-  }
+  locale.value = cachedLocale.value;
 }
 
 const tdesignLocaleMap: Record<string, object> = {
@@ -137,7 +129,7 @@ const customConfig: GlobalConfigProvider = {
   table: {},
   pagination: {},
 };
-const globalConfig = computed<GlobalConfigProvider>(() => merge({}, tdesignLocaleMap[cachedLocale.value] || zhConfig, customConfig));
+const globalConfig = computed<GlobalConfigProvider>(() => merge({}, tdesignLocaleMap[cachedLocale.value] || enConfig, customConfig));
 
 onBeforeMount(() => {
   initTheme();

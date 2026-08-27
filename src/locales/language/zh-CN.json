@@ -50,6 +50,9 @@
       "duration": "时长",
       "lines": "台词",
       "createTime": "创建时间"
+    },
+    "promptEditor": {
+      "textReference": "文本参考"
     }
   },
   "settings": {
@@ -253,13 +256,22 @@
         "disabled": "已禁用",
         "linkAddVendorRiskBody": "添加新的 AI 供应商将赋予其访问系统 API 的权限，请确认您信任该供应商的链接来源！",
         "importAdd": "添加新的 AI 供应商将赋予其访问系统 API 的权限，请确认您信任该供应商的文件来源！",
-        "linkAddFailed": "链接添加失败"
+        "linkAddFailed": "链接添加失败",
+        "linkReturnedHtml": "链接返回了一个网页，添加供应商需要返回TS代码，请确认链接是否正确",
+        "linkReturnedHtmlBody": "请勿输入中转站地址，如需使用中转站请修改OpenAI标准接口的baseUrl使用中转站地址",
+        "linkContentInvalid": "链接返回的内容不正确，添加供应商需要返回TS代码，请确认链接是否正确",
+        "operationFailed": "操作失败"
       },
       "think": "深度思考",
       "code": "代码",
       "linkAddPlaceholder": "输入链接添加",
       "noFileSelected": "成功导入文件",
-      "linkAdd": "确认"
+      "linkAdd": "确认",
+      "importAddMode": "通过文件导入",
+      "linkAddMode": "通过链接添加",
+      "codeAddMode": "通过代码添加",
+      "linkAddWarning": "请填写 TypeScript 代码文件的链接（.ts 文件），不要填 API 地址或其他无关链接。 确认后 Toonflow 会自动加载该代码，请确保链接来源可信。",
+      "count": "数量"
     },
     "agent": {
       "bannerDesc": "推荐使用官方DeepSeek V4",
@@ -284,9 +296,15 @@
         "enterKey": "请输入 KEY",
         "saveFailed": "保存失败：",
         "getAgentListFailed": "获取Agent配置列表失败：",
-        "toonflowNotFound": "Toonflow官方中转站不存在"
+        "toonflowNotFound": "Toonflow官方中转站不存在",
+        "selectModelFirst": "请选择要设置的模型"
       },
-      "temperature": "温度"
+      "temperature": "温度",
+      "batchSetting": "批量设置",
+      "batchSettingTitle": "批量设置（高级）",
+      "selectAgent": "选择agent",
+      "selectPlaceholder": "请选择",
+      "all": "全部"
     },
     "memory": {
       "warning": "以下配置项已预设为推荐值。除非您清楚了解各项配置的含义及影响，否则建议维持现有设置",
@@ -343,7 +361,8 @@
         "typeVideo": "视频",
         "promptNameRequired": "请输入提示词名称",
         "promptSaveSuccess": "保存成功"
-      }
+      },
+      "modelFilePathHelp": "向量模型文件路径：/data/models/{path}"
     },
     "login": {
       "username": "用户名",
@@ -540,7 +559,14 @@
       "noUpdate": "当前已是最新版本",
       "upToDate": "检测到新版本",
       "reinstallRequired": "将自动打开浏览器并下载，如未打开请手动打开",
-      "confirmReinstall": "复制链接"
+      "confirmReinstall": "复制链接",
+      "updateTime": "更新时间",
+      "customUrlPlaceholder": "输入自定义更新地址",
+      "msg": {
+        "customUrlEnabled": "已开启自定义更新地址"
+      },
+      "confirmUpdateBody": "将通过 {source} 更新到 v{version}，确认继续吗？{warning}",
+      "reinstallWarning": "\n\n检测到该版本需要重新安装更新，安装过程中可能会替换现有安装，请先保存当前工作。"
     },
     "logout": {
       "warning": "退出登录后，您需要重新登录才能继续使用系统。",
@@ -631,6 +657,21 @@
     },
     "generate": {
       "modelChnageSure": "确认清空"
+    },
+    "ui": {
+      "colorMode": "颜色模式",
+      "modeAuto": "自动",
+      "modeLight": "浅色",
+      "modeDark": "深色",
+      "themeColor": "主题色",
+      "fontSize": "字体大小",
+      "fontTiny": "极小",
+      "fontSmaller": "较小",
+      "fontSmall": "小",
+      "fontDefault": "默认",
+      "fontLarge": "大",
+      "fontLarger": "较大",
+      "fontHuge": "极大"
     }
   },
   "workbench": {
@@ -708,7 +749,22 @@
         "directorManualName": "导演手册名称",
         "directorManualNamePh": "输入导演手册名称",
         "directorFile": "导演手册文件",
-        "directorManualCover": "导演手册封面"
+        "directorManualCover": "导演手册封面",
+        "tab": {
+          "prefix": "前缀",
+          "character": "角色",
+          "characterDerivative": "角色衍生",
+          "prop": "道具",
+          "propDerivative": "道具衍生",
+          "scene": "场景",
+          "sceneDerivative": "场景衍生",
+          "storyboard": "分镜",
+          "storyboardVideo": "分镜视频",
+          "directorPlanningStyle": "技法-导演规划",
+          "storyboardTableStyle": "技法-分镜表设计",
+          "directorPlanning": "导演规划",
+          "storyboardTable": "分镜表"
+        }
       },
       "msg": {
         "fetchFailed": "获取项目列表失败",
@@ -1003,7 +1059,9 @@
       "cancelGeneration": "取消生成",
       "selectGenerating": "选择正在生成项",
       "noGenerating": "没有正在生成的数据",
-      "checkNumber": "选择数量"
+      "checkNumber": "选择数量",
+      "promptGenerated": "已生成提示词",
+      "promptNotGenerated": "未生成提示词"
     },
     "script": {
       "searchPlaceholder": "搜索剧本名称...",
@@ -1143,7 +1201,14 @@
         "describeRequired": "请输入详情",
         "remarkRequired": "请输入备注",
         "updateSuccess": "资产更新成功",
-        "addSuccess": "资产添加成功"
+        "addSuccess": "资产添加成功",
+        "editTitle": "编辑",
+        "addTitle": "新增",
+        "audioTextPh": "请输入该音频对应的文本内容",
+        "audioDescPh": "请输入该音频的描述",
+        "addAudio": "添加音频",
+        "uploaded": "已上传",
+        "uploadAudioHint": "点击或拖拽上传音频"
       },
       "gen": {
         "header": "图片生成",
@@ -1222,7 +1287,10 @@
           "editInfo": "提示词修改",
           "selectedCount": "已选 {count} 项",
           "clearSelection": "取消选择",
-          "selectAll": "全选"
+          "selectAll": "全选",
+          "selectFirst": "请先选择分镜面板",
+          "generateFailed": "生成失败",
+          "batchDelete": "批量删除"
         },
         "storyboardTable": {
           "title": "分镜表",
@@ -1276,7 +1344,11 @@
         "uploadImage": "资产图片上传",
         "mode": "模式",
         "closeConfirmTitle": "是否关闭编辑面板？",
-        "closeConfirmBody": "关闭之后未保存的数据会丢失"
+        "closeConfirmBody": "关闭之后未保存的数据会丢失",
+        "assetImage": "资产图片",
+        "storyboardImage": "分镜图片",
+        "textRef": "文本{index}",
+        "textBadge": "文"
       },
       "save": "选取",
       "cancel": "取消",
@@ -1463,7 +1535,14 @@
         "playbackRateRange": "播放倍速必须在 0.1 到 10 之间",
         "updatePlaybackRateFailed": "更新播放倍速失败:",
         "importProject": "导入项目",
-        "import": "导入"
+        "import": "导入",
+        "track": {
+          "main": "主轨道",
+          "audio": "音频",
+          "subtitle": "字幕",
+          "filter": "滤镜"
+        },
+        "clipNamingHint": "视频素材名字按照分镜台组#号数字命名"
       },
       "clipType": {
         "video": "视频",
@@ -1598,7 +1677,6 @@
       "generating": "生成中",
       "generateFailed": "查看失败原因",
       "selectAll": "全选",
-      "selected": "已选",
       "batchGenerateText": "批量生成提示词",
       "batchGenerateVideo": "批量生成视频",
       "importVideo": "导入剪辑台",
@@ -1638,7 +1716,41 @@
       "generatePrompt": "生成提示词",
       "generateVideo": "生成视频",
       "modeChange": "清空内容",
-      "modeChangeConfirm": "切换模式将会清空当前选中的图片和提示词"
+      "modeChangeConfirm": "切换模式将会清空当前选中的图片和提示词",
+      "mode": {
+        "singleImage": "单图",
+        "startEndRequired": "首尾帧",
+        "endFrameOptional": "尾帧可选",
+        "startFrameOptional": "首帧可选",
+        "text": "文本生视频",
+        "video": "视频",
+        "image": "图片",
+        "audio": "音频",
+        "textRef": "文本",
+        "referenceCombo": "{parts}参考"
+      },
+      "msg": {
+        "promptGenFailed": "提示词生成失败",
+        "promptGenFailedReason": "提示词生成失败，{reason}",
+        "unknownReason": "未知原因",
+        "submitFailed": "视频发起生成请求失败",
+        "promptGenStarted": "开始生成提示词",
+        "promptGenRequestFailed": "生成提示词失败",
+        "downloading": "下载进行中，请稍候",
+        "downloadFailed": "下载失败"
+      },
+      "file": {
+        "trackVideo": "分镜{id}",
+        "batchVideoZip": "视频批量下载_{time}.zip",
+        "singleVideo": "视频_{time}.mp4",
+        "storyboardImage": "分镜{id}",
+        "storyboardZip": "分镜压缩包.zip"
+      },
+      "audioContent": "音频内容：{content}",
+      "storyboardIndex": "分镜 {index}",
+      "selectedTag": "已选择",
+      "selectedTrackCount": "已选 {count} 段",
+      "mediaAudio": "音频"
     }
   },
   "login": {
@@ -1667,7 +1779,20 @@
     "submitting": "提交中",
     "editSuccess": "修改成功",
     "editFailed": "修改失败",
-    "submit": "提交"
+    "submit": "提交",
+    "loading": "加载中...",
+    "networkError": {
+      "intro": "网络连接失败，请依次尝试：",
+      "step1": "1. 右键程序图标 → 以管理员身份运行",
+      "step2": "2. 检查后端服务是否已正常启动",
+      "step3": "3. 安装 Visual C++ 运行库：",
+      "download32": "32位下载",
+      "download64": "64位下载",
+      "title": "网络连接失败"
+    },
+    "pageNotFound": "页面不存在",
+    "backHome": "返回首页",
+    "testButton": "测试按钮"
   },
   "workbench.project.msg.enterProjectQuality": "请选择图片质量",
   "promptManage": {

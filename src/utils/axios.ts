@@ -3,6 +3,7 @@ import router from "@/router/index";
 import { storeToRefs } from "pinia";
 import { MessagePlugin, NotifyPlugin, type TNode } from "tdesign-vue-next";
 import settingStore from "@/stores/setting";
+import i18n from "@/locales";
 import { h } from "vue";
 const instance = axios.create();
 
@@ -14,6 +15,14 @@ instance.interceptors.request.use(function (config) {
   if (token) {
     config.headers.Authorization = token;
   }
+  // 后端从 X-Toonflow-Lang 请求头解析面向用户的文案（只取首个 `-` 之前的子标签），
+  // 缺少该头时才回退到服务端保存的 content_language 设置。始终发送完整的界面语言
+  // 标记（en / vi-VN / zh-CN），让后端跟随界面语言。
+  // The backend resolves person-facing text from the X-Toonflow-Lang header (it
+  // reads the subtag before the first "-"), falling back to the stored
+  // content_language setting only when the header is absent. Always send the full
+  // interface locale tag (en / vi-VN / zh-CN) so the backend follows the UI.
+  config.headers["X-Toonflow-Lang"] = i18n.global.locale.value;
 
   return config;
 });
@@ -30,17 +39,17 @@ instance.interceptors.response.use(
     }
     if (error.message.includes("Network Error") || error.response.data?.message === "Network Error") {
       NotifyPlugin.error({
-        title: "Network Error",
+        title: window.$t("common.networkError.title"),
         closeBtn: true,
         duration: 3000, // 不自动关闭，让用户有时间看
         className: "customNotifyFull", // 自定义类名
         content: () =>
           h("div", [
-            h("div", { style: { marginBottom: "8px" } }, "网络连接失败，请依次尝试："),
-            h("div", { style: { marginBottom: "4px" } }, "1. 右键程序图标 → 以管理员身份运行"),
-            h("div", { style: { marginBottom: "4px" } }, "2. 检查后端服务是否已正常启动"),
+            h("div", { style: { marginBottom: "8px" } }, window.$t("common.networkError.intro")),
+            h("div", { style: { marginBottom: "4px" } }, window.$t("common.networkError.step1")),
+            h("div", { style: { marginBottom: "4px" } }, window.$t("common.networkError.step2")),
             h("div", [
-              "3. 安装 Visual C++ 运行库：",
+              window.$t("common.networkError.step3"),
               h("div", { style: { display: "flex", gap: "8px", marginTop: "4px" } }, [
                 h(
                   "a",
@@ -50,7 +59,7 @@ instance.interceptors.response.use(
                     rel: "noopener noreferrer",
                     style: { color: "#0052d9" },
                   },
-                  "32位下载",
+                  window.$t("common.networkError.download32"),
                 ),
                 h(
                   "a",
@@ -60,7 +69,7 @@ instance.interceptors.response.use(
                     rel: "noopener noreferrer",
                     style: { color: "#0052d9" },
                   },
-                  "64位下载",
+                  window.$t("common.networkError.download64"),
                 ),
               ]),
             ]),

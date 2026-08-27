@@ -1,14 +1,14 @@
 <template>
   <div class="uiConfig">
     <t-form labelAlign="top">
-      <t-form-item label="颜色模式">
+      <t-form-item :label="$t('settings.ui.colorMode')">
         <t-radio-group variant="default-filled" v-model="themeSetting.mode">
-          <t-radio-button value="auto">自动</t-radio-button>
-          <t-radio-button value="light">浅色</t-radio-button>
-          <t-radio-button value="dark">深色</t-radio-button>
+          <t-radio-button value="auto">{{ $t("settings.ui.modeAuto") }}</t-radio-button>
+          <t-radio-button value="light">{{ $t("settings.ui.modeLight") }}</t-radio-button>
+          <t-radio-button value="dark">{{ $t("settings.ui.modeDark") }}</t-radio-button>
         </t-radio-group>
       </t-form-item>
-      <t-form-item label="主题色">
+      <t-form-item :label="$t('settings.ui.themeColor')">
         <div class="themeColorConfig">
           <button
             v-for="color in presetColors"
@@ -21,15 +21,15 @@
           <t-color-picker v-model="themeSetting.primaryColor" :color-modes="['monochrome']" format="HEX" :enable-alpha="false" />
         </div>
       </t-form-item>
-      <t-form-item label="字体大小">
+      <t-form-item :label="$t('settings.ui.fontSize')">
         <t-radio-group variant="default-filled" v-model="themeSetting.fontSize">
-          <t-radio-button :value="12">极小</t-radio-button>
-          <t-radio-button :value="13">较小</t-radio-button>
-          <t-radio-button :value="14">小</t-radio-button>
-          <t-radio-button :value="16">默认</t-radio-button>
-          <t-radio-button :value="18">大</t-radio-button>
-          <t-radio-button :value="20">较大</t-radio-button>
-          <t-radio-button :value="22">极大</t-radio-button>
+          <t-radio-button :value="12">{{ $t("settings.ui.fontTiny") }}</t-radio-button>
+          <t-radio-button :value="13">{{ $t("settings.ui.fontSmaller") }}</t-radio-button>
+          <t-radio-button :value="14">{{ $t("settings.ui.fontSmall") }}</t-radio-button>
+          <t-radio-button :value="16">{{ $t("settings.ui.fontDefault") }}</t-radio-button>
+          <t-radio-button :value="18">{{ $t("settings.ui.fontLarge") }}</t-radio-button>
+          <t-radio-button :value="20">{{ $t("settings.ui.fontLarger") }}</t-radio-button>
+          <t-radio-button :value="22">{{ $t("settings.ui.fontHuge") }}</t-radio-button>
         </t-radio-group>
       </t-form-item>
     </t-form>

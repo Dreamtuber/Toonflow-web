@@ -80,7 +80,7 @@
                   :disabled="selectedTextLength > otherSetting.scriptEpisodeLength"
                   :loading="nextLoading"
                   @click="keep">
-                  保存
+                  {{ $t("common.save") }}
                 </t-button>
               </div>
             </div>
@@ -97,6 +97,7 @@ const { otherSetting } = storeToRefs(settingStore());
 import { LoadingPlugin } from "tdesign-vue-next";
 import axios from "@/utils/axios";
 import parseScript from "@/utils/parseScript";
+import { defaultEpisodeRegexString } from "@/utils/chapterRegex";
 import mammoth from "mammoth";
 import type { UploadFile, PrimaryTableCol, TableRowData } from "tdesign-vue-next";
 import projectStore from "@/stores/project";
@@ -116,7 +117,10 @@ const fileList = ref<any[]>([]);
 const selectedRowKeys = ref<number[]>([]);
 
 const nextLoading = ref(false);
-const customRegStr = ref("");
+// 预填当前界面语言的默认正则——只是默认值，用户可以随意改写或清空。
+// Prefilled with the current interface locale's default pattern; it stays
+// editable and can be cleared.
+const customRegStr = ref(defaultEpisodeRegexString());
 const regexError = ref("");
 const aiRegexLoading = ref(false);
 
@@ -255,7 +259,7 @@ watch(purgeNovelShow, (newVal) => {
     fileList.value = [];
     selectedRowKeys.value = [];
     activeKey.value = "To1";
-    customRegStr.value = "";
+    customRegStr.value = defaultEpisodeRegexString();
     regexError.value = "";
   }
 });

@@ -5,7 +5,15 @@
         <t-table row-key="key" :data="item.promptList" :columns="columns">
           <template #type="{ row: subRow }">
             <div class="type">
-              <span>{{ subRow.type == "text" ? "文本" : subRow.type == "video" ? "视频" : "图片" }}</span>
+              <span>
+                {{
+                  subRow.type == "text"
+                    ? $t("settings.memory.modelMap.typeText")
+                    : subRow.type == "video"
+                      ? $t("settings.memory.modelMap.typeVideo")
+                      : $t("settings.memory.modelMap.typeImage")
+                }}
+              </span>
             </div>
           </template>
           <template #operation="{ row }">

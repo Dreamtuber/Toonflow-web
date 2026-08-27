@@ -55,6 +55,7 @@
 import settingStore from "@/stores/setting";
 const { otherSetting, canvasWheelEvent } = storeToRefs(settingStore());
 
+import { defaultChapterRegexString } from "@/utils/chapterRegex";
 import { computed } from "vue";
 // 将毫秒转换为秒显示，输入时转换回毫秒存储
 const axiosTimeOutInSeconds = computed({
@@ -69,8 +70,11 @@ const axiosTimeOutInSeconds = computed({
   },
 });
 
+// 恢复默认 = 恢复当前界面语言的默认值，而不是永远的中文写法。
+// "Restore default" restores the default for the current interface locale,
+// not the Chinese pattern forever.
 function setDefaultReg() {
-  otherSetting.value.chapterReg = "/第\\s*([0-9０-９零一二三四五六七八九十百千万]+)\\s*[章回节]\\s*([^\\n\\r]*)/g";
+  otherSetting.value.chapterReg = defaultChapterRegexString();
 }
 </script>
 

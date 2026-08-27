@@ -20,9 +20,9 @@
 
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
-import { languageList, cachedLocale } from "@/locales";
+import { languageList, cachedLocale, DEFAULT_LOCALE } from "@/locales";
 
-const selectedLang = ref<string>(cachedLocale.value ?? "zh-CN");
+const selectedLang = ref<string>(cachedLocale.value || DEFAULT_LOCALE);
 
 const { locale } = useI18n();
 

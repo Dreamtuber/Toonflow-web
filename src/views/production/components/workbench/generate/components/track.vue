@@ -4,7 +4,7 @@
       <div class="trackMenu f ac jb">
         <div class="left f ac">
           <t-checkbox v-model="checkAll" @change="handleCheckAll">{{ $t("workbench.generate.selectAll") }}</t-checkbox>
-          <span class="selectedCount" v-if="checkedTrackIds.length">{{ $t("workbench.generate.selected") }} {{ checkedTrackIds.length }} 段</span>
+          <span class="selectedCount" v-if="checkedTrackIds.length">{{ $t("workbench.generate.selectedTrackCount", { count: checkedTrackIds.length }) }}</span>
         </div>
         <div class="right f ac">
           <t-button size="small" variant="outline" @click="batchDownloadVideo">{{ $t("workbench.generate.batchDownloadVideo") }}</t-button>
@@ -30,7 +30,7 @@
             @click.stop
             @change="(val: boolean) => toggleCheck(track.id, val)" />
           <t-tag class="indexTag" size="small">#{{ index + 1 }}</t-tag>
-          <t-tag class="selectTag" theme="success" size="small" v-if="track.selectVideoId">已选择</t-tag>
+          <t-tag class="selectTag" theme="success" size="small" v-if="track.selectVideoId">{{ $t("workbench.generate.selectedTag") }}</t-tag>
           <!-- 优先展示选中视频的首帧 -->
           <div class="thumbGroup" v-if="track.selectVideoId && getSelectedVideoSrc(track)">
             <img
@@ -220,11 +220,11 @@ async function batchDownloadVideo(): Promise<void> {
     .map((track) => {
       const video = track.videoList.find((v) => v.id === track.selectVideoId);
       if (!video?.src) return null;
-      const filename = `分镜${track.id}.${getFileExtension(video.src)}`;
+      const filename = `${$t("workbench.generate.file.trackVideo", { id: track.id })}.${getFileExtension(video.src)}`;
       return fetch(video.src)
         .then((res) => res.blob())
         .then((blob) => zip.file(filename, blob))
-        .catch((err) => console.error(`视频下载失败: ${video.src}`, err));
+        .catch((err) => console.error(`Video download failed: ${video.src}`, err));
     })
     .filter(Boolean);
   await Promise.all(tasks);
@@ -232,7 +232,7 @@ async function batchDownloadVideo(): Promise<void> {
   const url = URL.createObjectURL(zipBlob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `视频批量下载_${Date.now()}.zip`;
+  a.download = $t("workbench.generate.file.batchVideoZip", { time: Date.now() });
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -268,13 +268,13 @@ function batchGenText() {
       concurrentCount: otherSetting.value.assetsBatchGenereateSize,
     })
     .then(({ data }) => {
-      window.$message.success("开始生成提示词");
+      window.$message.success($t("workbench.generate.msg.promptGenStarted"));
       generateTextLoad.value = false;
       checkedTrackIds.value = [];
       checkAll.value = false;
     })
     .catch((e) => {
-      window.$message.error(e?.message ?? "生成提示词失败");
+      window.$message.error(e?.message ?? $t("workbench.generate.msg.promptGenRequestFailed"));
       trackList.value.forEach((i) => {
         i.state = "生成失败";
       });

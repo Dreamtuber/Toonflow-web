@@ -1,5 +1,5 @@
 // 动态加载 src/assets/providers 下所有图标
-const iconModules = import.meta.glob<string>("@/assets/providers/*.{webp,png}", {
+const iconModules: Record<string, string> = import.meta.glob("@/assets/providers/*.{webp,png}", {
   eager: true,
   query: "?url",
   import: "default",
