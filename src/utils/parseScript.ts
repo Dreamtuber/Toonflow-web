@@ -1,4 +1,4 @@
-import { defaultChapterRegex } from "@/utils/chapterRegex";
+import { defaultEpisodeRegex } from "@/utils/chapterRegex";
 
 const CHINESE_NUM_MAP: { [key: string]: number } = {
   零: 0,
@@ -79,7 +79,7 @@ export default function parseScript(text: string, customRegStr?: string): Episod
   } else {
     // 调用方没传正则时，退回当前界面语言的默认值。
     // With nothing passed in, fall back to the current interface locale's default.
-    EPISODE_REGEX = defaultChapterRegex();
+    EPISODE_REGEX = defaultEpisodeRegex();
   }
 
   EPISODE_REGEX.lastIndex = 0;

@@ -20,6 +20,23 @@ const ENGLISH_CHAPTER_RE = /^(?:Chapter|Episode)\s+([0-9]+)\s*(?:[:.\-–—]\s*
 const CHINESE_CHAPTER_RE = /第\s*([0-9０-９零一二三四五六七八九十百千万]+)\s*[章回节]\s*([^\n\r]*)/g;
 
 /**
+ * 剧本用「集」，小说用「章/回/节」——两种稿件的分隔符不同，不能共用一个默认值。
+ * Scripts are split by 集 (episode); novels by 章/回/节 (chapter). They are
+ * different documents and must not share one default.
+ *
+ * 这一条曾经丢失过：app 仓库的 patch-web-ui.ts 把 parseScript 原本的 第…集
+ * 改接到章节正则上，移植过来时照抄了这个缺陷。结果是 zh-CN 用户粘贴
+ * 第1集/第2集 的剧本时一条都匹配不到，parseScript 落到 matches.length === 0
+ * 分支，把整份稿件当成标题为空的第 1 集——不报错，也没有测试会发现。
+ * This was lost once: the app repo's patch-web-ui.ts rewired parseScript's
+ * 第…集 onto the chapter pattern, and the port copied that defect. A zh-CN
+ * user pasting a 第1集/第2集 script matched nothing, parseScript fell into its
+ * matches.length === 0 branch, and the whole file became a single untitled
+ * Episode 1 — silently, with no test runner to catch it.
+ */
+const CHINESE_EPISODE_RE = /第\s*([0-9０-９零一二三四五六七八九十百千万]+)\s*集\s*([^\n\r]*)/g;
+
+/**
  * 读取当前界面语言；i18n 尚未就绪时退回空串（走英文默认值）。
  * Read the current interface locale, degrading to "" (the English default)
  * when i18n is not ready yet.
@@ -49,4 +66,21 @@ export function defaultChapterRegex(locale: string = currentLocale()): RegExp {
  */
 export function defaultChapterRegexString(locale?: string): string {
   return defaultChapterRegex(locale ?? currentLocale()).toString();
+}
+
+/**
+ * 剧本导入的默认正则。中文用「第…集」，其余语言与章节写法一致
+ * （Chapter|Episode 已经涵盖剧集）。
+ * The default pattern for script import. Chinese uses 第…集; other locales
+ * share the chapter form, whose Chapter|Episode alternation already covers
+ * episodes.
+ */
+export function defaultEpisodeRegex(locale: string = currentLocale()): RegExp {
+  const selected = /^zh(?:-|$)/i.test(locale.trim()) ? CHINESE_EPISODE_RE : ENGLISH_CHAPTER_RE;
+  return new RegExp(selected.source, selected.flags);
+}
+
+/** 字面量形式，供剧本导入的输入框预填与「恢复默认」使用。 */
+export function defaultEpisodeRegexString(locale?: string): string {
+  return defaultEpisodeRegex(locale ?? currentLocale()).toString();
 }
