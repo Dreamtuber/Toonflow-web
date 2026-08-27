@@ -997,7 +997,7 @@
       "resolutionPh": "Please select a resolution",
       "concurrency": "Concurrency",
       "concurrencyPh": "Enter concurrency level",
-      "startBatch": "Start generating images in batches",
+      "startBatch": "Batch Generate Images",
       "waitingGen": "Waiting...",
       "generating": "Generating",
       "genFailed": "Generation failed",
@@ -1007,6 +1007,7 @@
       "typeTool": "Prop",
       "typeUnknown": "Unknown",
       "descriptionSuffix": "Description: ",
+      "describeLine": "{type} description: ",
       "operateScriptFirst": "Please handle the script first",
       "individualConfig": "Individual Config",
       "noImage": "No Image",
@@ -1043,10 +1044,10 @@
       },
       "history": "historical pictures",
       "confirmReplace": "Confirm replacement",
-      "batchGenerationPrompt": "Generate prompt words in batches",
+      "batchGenerationPrompt": "Batch Generate Prompts",
       "generatingPrompt": "Generating",
       "selectAll": "Select all",
-      "selectPromptEmpty": "Select all prompt word is empty",
+      "selectPromptEmpty": "Select All Empty Prompts",
       "noEmptyPrompt": "There are no assets with empty prompt word",
       "selectedCount": "{count} assets selected",
       "cancelGeneration": "Cancel generation",
@@ -1135,7 +1136,7 @@
         }
       },
       "deleteScript": "Delete scripts in batches",
-      "extractAssets": "",
+      "extractAssets": "Extract Assets",
       "import": {
         "episodeRegexPh": "Customize the script splitting rule, leave it blank to use the default splitting rule (the default is to split according to the Episode X format)",
         "col": {
@@ -1460,6 +1461,7 @@
         "modeVideoRef": "Video Reference",
         "modeImageRef": "Image Reference",
         "modeAudioRef": "Audio Reference",
+        "modeSeparator": ", ",
         "modeTextRef": "Text Reference",
         "startFrame": "Start Frame",
         "startFrameOptional": "Start Frame (Optional)",
@@ -1796,7 +1798,6 @@
   "components.storyboardImageCheck.duration": "Duration",
   "components.storyboardImageCheck.lines": "Lines",
   "components.storyboardImageCheck.createTime": "Created Time",
-  "workbench.script.extractAssets": "Extract Assets",
   "promptManage": {
     "prompt": "prompt word"
   },
@@ -1804,7 +1805,7 @@
     "welcomeTitle": "Welcome to ToonFlow",
     "welcomeDesc": "AI-driven comic creation workflow platform, let us spend a minute to complete the initial configuration.",
     "startConfig": "Start configuration",
-    "skip": "Skip boot",
+    "skip": "Skip",
     "configModel": "Add model service",
     "configData": "Configure Agent",
     "startUse": "Get started",
