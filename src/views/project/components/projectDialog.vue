@@ -686,7 +686,10 @@ const MODE_LABEL: Record<string, string> = {
 // 模式转换为统一的 key 形式，方便后续处理
 function getModeLabel(mode?: VideoMode): string {
   if (!mode) return "";
-  if (Array.isArray(mode)) return mode.map((r) => MODE_LABEL[r.replace(/:.*$/, "")] ?? r).join("、");
+  // The separator comes from the catalog: "、" is the Chinese enumeration comma and was hard-coded
+  // here, so the English and Vietnamese dropdowns rendered a CJK codepoint between Latin labels.
+  if (Array.isArray(mode))
+    return mode.map((r) => MODE_LABEL[r.replace(/:.*$/, "")] ?? r).join($t("workbench.production.generate.modeSeparator"));
   return MODE_LABEL[mode] ?? mode;
 }
 //模式数组转换为字符串 key，方便在前端使用和比较

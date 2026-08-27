@@ -54,9 +54,14 @@
                   {{ $t("workbench.cornerScape.selectedCount", { count: selectedIds.length }) }}
                 </t-tag>
               </div>
-              <div class="ac jb" style="width: 100%">
+              <!--
+                Wraps instead of forcing two buttons onto one row. Splitting a 261px panel in half
+                leaves 125px per button, which fits the 4-character Chinese labels and clips every
+                English and Vietnamese one. `gap` handles the spacing that margin-left used to.
+              -->
+              <div class="batchActions">
                 <t-button theme="primary" block @click="batchGenerationPrompt">{{ $t("workbench.cornerScape.batchGenerationPrompt") }}</t-button>
-                <t-button theme="primary" style="margin-left: 10px" block @click="batchSelectBindAudio">
+                <t-button theme="primary" block @click="batchSelectBindAudio">
                   {{ $t("workbench.cornerScape.batchBingAudio") }}
                 </t-button>
               </div>
@@ -123,16 +128,25 @@
               {{ item.resolution }}
             </t-tag>
           </div>
+          <!--
+            One interpolated string, not "{type}" + "{suffix}". Concatenating them only reads
+            correctly in Chinese, where 角色 + 描述： composes into 角色描述：. English produced
+            "CharacterDescription:" with no space, and Vietnamese cannot use this order at all —
+            it needs "Mô tả nhân vật", type last. Each locale now owns the whole line.
+          -->
           <div class="prompt" v-if="item.describe">
             {{
-              item.type === "role"
-                ? $t("workbench.cornerScape.typeRole")
-                : item.type === "scene"
-                  ? $t("workbench.cornerScape.typeScene")
-                  : item.type === "tool"
-                    ? $t("workbench.cornerScape.typeTool")
-                    : $t("workbench.cornerScape.typeUnknown")
-            }}{{ $t("workbench.cornerScape.descriptionSuffix") }}{{ item.describe }}
+              $t("workbench.cornerScape.describeLine", {
+                type:
+                  item.type === "role"
+                    ? $t("workbench.cornerScape.typeRole")
+                    : item.type === "scene"
+                      ? $t("workbench.cornerScape.typeScene")
+                      : item.type === "tool"
+                        ? $t("workbench.cornerScape.typeTool")
+                        : $t("workbench.cornerScape.typeUnknown"),
+              })
+            }}{{ item.describe }}
           </div>
           <div v-if="item.relepedAudio.length" style="margin-top: 6px">
             <t-tag v-for="audio in item.relepedAudio" :key="audio.id" size="small" variant="outline" theme="primary">{{ audio.name }}</t-tag>
@@ -975,6 +989,20 @@ async function selectAudio() {
 </script>
 
 <style lang="scss" scoped>
+// Two buttons side by side when they fit, stacked when they do not. TDesign's `block` makes each
+// one fill its flex line, so a wrapped button still spans the panel.
+.batchActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+
+  > * {
+    flex: 1 1 12rem;
+    min-width: 0;
+  }
+}
+
 .cornerScape {
   width: 100%;
   height: 100%;

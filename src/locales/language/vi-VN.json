@@ -997,7 +997,7 @@
       "resolutionPh": "Vui lòng chọn độ phân giải",
       "concurrency": "Số lượng đồng thời",
       "concurrencyPh": "Vui lòng nhập số lượng đồng thời",
-      "startBatch": "Bắt đầu tạo hình ảnh theo đợt",
+      "startBatch": "Tạo hình ảnh hàng loạt",
       "waitingGen": "Đang chờ tạo",
       "generating": "Đang tạo",
       "genFailed": "Tạo thất bại",
@@ -1007,6 +1007,7 @@
       "typeTool": "Công cụ",
       "typeUnknown": "Không xác định",
       "descriptionSuffix": "Mô tả:",
+      "describeLine": "Mô tả {type}: ",
       "operateScriptFirst": "Vui lòng thao tác với kịch bản trước",
       "individualConfig": "Cấu hình riêng lẻ",
       "noImage": "Chưa có hình ảnh",
@@ -1043,10 +1044,10 @@
       },
       "history": "hình ảnh lịch sử",
       "confirmReplace": "Xác nhận thay thế",
-      "batchGenerationPrompt": "Tạo các từ nhắc nhở theo đợt",
+      "batchGenerationPrompt": "Tạo prompt hàng loạt",
       "generatingPrompt": "Đang tạo",
       "selectAll": "Chọn tất cả",
-      "selectPromptEmpty": "Chọn tất cả từ nhắc trống",
+      "selectPromptEmpty": "Chọn tất cả mục có prompt trống",
       "noEmptyPrompt": "Không có nội dung nào có từ nhắc trống",
       "selectedCount": "đã chọn {count} nội dung",
       "cancelGeneration": "Hủy tạo",
@@ -1134,8 +1135,8 @@
           "updateFailed": "Cập nhật kịch bản thất bại, vui lòng thử lại sau"
         }
       },
-      "deleteScript": "Xóa tập lệnh theo đợt",
-      "extractAssets": "",
+      "deleteScript": "Xóa kịch bản hàng loạt",
+      "extractAssets": "Trích xuất tài nguyên",
       "import": {
         "episodeRegexPh": "Tùy chỉnh quy tắc chia tập lệnh, để trống để sử dụng quy tắc chia tập lệnh mặc định (mặc định là chia theo định dạng Tập X)",
         "col": {
@@ -1459,6 +1460,7 @@
         "modeVideoRef": "Video tham khảo",
         "modeImageRef": "Ảnh tham khảo",
         "modeAudioRef": "Âm thanh tham khảo",
+        "modeSeparator": ", ",
         "modeTextRef": "Văn bản tham khảo",
         "startFrame": "Khung hình đầu",
         "startFrameOptional": "Khung hình đầu (Tùy chọn)",
@@ -1823,7 +1825,6 @@
   "components.storyboardImageCheck.duration": "Thời lượng",
   "components.storyboardImageCheck.lines": "Lời thoại",
   "components.storyboardImageCheck.createTime": "Thời gian tạo",
-  "workbench.script.extractAssets": "Trích xuất tài sản",
   "promptManage": {
     "prompt": "lời nhắc"
   },
@@ -1831,7 +1832,7 @@
     "welcomeTitle": "Chào mừng đến với ToonFlow",
     "welcomeDesc": "Nền tảng quy trình tạo truyện tranh do AI điều khiển, chúng ta hãy dành một phút để hoàn thành cấu hình ban đầu.",
     "startConfig": "Bắt đầu cấu hình",
-    "skip": "Bỏ qua khởi động",
+    "skip": "Bỏ qua",
     "configModel": "Thêm dịch vụ mẫu",
     "configData": "Cấu hình tác nhân",
     "startUse": "Bắt đầu",

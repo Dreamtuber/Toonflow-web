@@ -2,15 +2,26 @@
   <div class="editNodel">
     <t-dialog v-model:visible="editNodelShow" :header="$t('workbench.novel.editDialog.title')" width="50%" top="10vh" placement="center">
       <div class="data" style="overflow-x: hidden">
-        <t-form label-width="80px">
+        <!--
+          Labels above the field, not beside it with a fixed width. "Chapter Content" and
+          "Nội dung chương" are both far wider than the four-character Chinese originals the
+          80px was sized for, so any px value that fits one locale clips another. Top labels
+          also give every control the dialog's full width. Ten other forms in the app already
+          use label-align="top"; this dialog was the only one still on a bare label-width.
+        -->
+        <t-form label-align="top">
           <t-form-item :label="$t('workbench.novel.editDialog.chapterName')">
             <t-input :placeholder="$t('workbench.novel.editDialog.chapterNamePh')" v-model="formData.chapter" />
           </t-form-item>
           <t-form-item :label="$t('workbench.novel.editDialog.eventContent')">
-            <t-textarea v-model="formData.event" :placeholder="$t('workbench.novel.editDialog.eventContentPh')"></t-textarea>
+            <t-textarea
+              v-model="formData.event"
+              :placeholder="$t('workbench.novel.editDialog.eventContentPh')"
+              :autosize="{ minRows: 4, maxRows: 8 }"
+            ></t-textarea>
           </t-form-item>
           <t-form-item :label="$t('workbench.novel.editDialog.chapterContent')">
-            <t-textarea :placeholder="$t('workbench.novel.editDialog.chapterContentPh')" v-model="formData.chapterData" :autosize="{ minRows: 15, maxRows: 15 }" />
+            <t-textarea :placeholder="$t('workbench.novel.editDialog.chapterContentPh')" v-model="formData.chapterData" :autosize="{ minRows: 12, maxRows: 12 }" />
           </t-form-item>
         </t-form>
       </div>
