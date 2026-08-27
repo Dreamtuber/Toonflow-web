@@ -667,6 +667,36 @@ body.is-electron {
     // 圆角
     --md-theme-radius-s: var(--td-radius-small);
     --md-theme-radius-m: var(--td-radius-medium);
+
+    // md-editor-v3 sets `word-break: break-all` on the whole preview, which chops
+    // English headings mid-word ("Ledg / er"). Wrap on word boundaries and break
+    // only when a single word is wider than the line. CJK still wraps freely.
+    word-break: normal;
+    overflow-wrap: break-word;
+
+    // Headings: the 2em/700 default is oversized in the narrow preview pane and
+    // its wrapped lines sit too close together.
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      // Headings carry their own `word-break: break-all`, so the container rule
+      // above does not reach them.
+      word-break: normal;
+      line-height: 1.35;
+      margin: 1.2em 0 0.6em;
+    }
+    h1 {
+      font-size: 1.6em;
+    }
+    h2 {
+      font-size: 1.35em;
+    }
+    h3 {
+      font-size: 1.15em;
+    }
   }
 
   // 编辑区 CodeMirror 样式
